@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+.background{
+    background-color: #674b47;
+}
+#main-header{
+    height: 800px;
+    position: relative;
+}
+
+#main-header .header{
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 10rem;
+    font-weight: bold;
+    position: absolute;
+    z-index: 2;
+    left: 24%;
+    top:80px;
+}
+.main-pr{
+    position: relative;
+}
+#main-header .main-pr p{
+    position: absolute;
+    left: 40%;
+    top: 290px;
+    letter-spacing: 8px;
+    font-weight: 700;
+    z-index: 2;
+    font-size: 1.5rem;
+    color: #674b47;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+#main-header .images{
+    margin-top: 220px;
+}
+
+
+.image-container:hover{
+    filter:brightness(0.7);
+    transition:all 500ms ease-in;
+}
+.images{
+    height: 500px;
+    width: 500px;
+}
+.images .image-1{
+    background-image: url(https://images.pexels.com/photos/6664301/pexels-photo-6664301.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+.images .image-2{
+    background-image: url(https://images.pexels.com/photos/5733519/pexels-photo-5733519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+
+}
+.images .image-1:hover,.images .image-2:hover{
+    filter:brightness(0.6);
+    transition:all 500ms ease-in;
+}

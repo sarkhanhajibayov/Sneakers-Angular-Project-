@@ -1,0 +1,87 @@
+#brands-section img{
+    width: 100%;
+    position: relative;
+}
+#brands-section .gallery img{
+    height: 300px;
+}
+#trends{
+    position: absolute;
+    width: 400px;
+    min-height: 300px;
+    box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 20%);
+    z-index: 2;
+    top: 20%;
+    left: 40%;
+    background-color: white;
+    
+}
+#trends h3{
+    color: #674b47;
+    font-size: 5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight:700;
+    padding-bottom: 50px;
+}
+#trends a{
+text-decoration: none;
+color: #000;
+font-size: 1rem;
+font-weight: 700;
+}
+
+#trends h3{
+padding-top: 120px;
+}
+#brands-section .product{
+    padding-left: 100px;
+}
+.product .container{
+    height: 200px;
+    width: 500px;
+}
+#brands-section p{
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .gallery a{
+      color: black;
+      text-decoration: none;
+  }
+  .gallery a:hover{
+      color: purple;
+      transition: all 500ms ease;
+  }
+  .gallery .container img{
+      display: block;
+  }
+  .gallery .container img{
+      transform: scale(1);
+      transition: all 500ms ease;
+  }
+  .gallery .container:hover img{
+      transform: scale(1.05);
+  }

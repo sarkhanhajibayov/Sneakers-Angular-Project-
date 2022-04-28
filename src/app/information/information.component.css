@@ -1,0 +1,67 @@
+ #information img{
+    width: 100%;
+    
+}
+#information{
+    height: 800px;
+}
+#information .header {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    padding: 20px 0;
+    font-size: 2.5rem;
+    color: black;
+}
+#information .jordan{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+.second{
+    background-image: url(https://wallpaperaccess.com/full/2697832.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+}
+
+#information img:hover{
+    filter:brightness(0.7);
+    transition:all 500ms ease-in;
+}
+#information .second .header{
+    color: white;
+    width: 80%;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+}
+#information .second p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: white;
+}
+.basket{
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+}
+.hover-rotate {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .hover-rotate img {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  
+  .hover-rotate:hover img {
+    transform: scale(1.1) rotate(5deg);
+  }
+  

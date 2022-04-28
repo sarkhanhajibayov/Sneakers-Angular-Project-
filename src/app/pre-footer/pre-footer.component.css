@@ -1,0 +1,39 @@
+.prons-section{
+    height: 500px;
+}
+.prons-section .header{
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 20px;
+    padding-top: 50px;
+}
+.columns{
+    padding-top: 100px;
+    width:100% ;
+}
+.icons{
+    width: 75px;
+    height: 75px;
+    background-color: #eeeeee;
+    border: 1px solid gray;
+    border-radius: 50%;
+    text-align: center;
+    border: none;
+}
+.icons .icon{
+  padding-top: 20px;
+}
+.columns p{
+    font-size: 14px;
+}
+.prons-section a{
+    text-decoration: none;
+    color: #111;
+}
+.prons-section a:hover{
+    color: purple;
+    transition: all 500ms ease;
+}
+

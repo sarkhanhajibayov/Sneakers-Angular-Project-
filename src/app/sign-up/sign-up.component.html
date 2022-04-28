@@ -1,0 +1,67 @@
+
+<div class="background">
+  <div class="logo"><b>S<span>ne</span>a<span>ke</span>rs</b></div>
+
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="d-flex flex-column align-items-center justify-content ">
+<mat-form-field appearance="fill">
+  <mat-label>Username or Email</mat-label>
+  <input matInput>
+  <mat-icon mat-icon-button matSuffix class="mr-2">person</mat-icon>
+</mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button  matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon> {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-slide-toggle  class="align-self-start">Remember me</mat-slide-toggle>
+
+ <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Log in
+    </a>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- <div class="logo"><b>S<span>ne</span>a<span>ke</span>rs</b></div> -->
+
+
+<!-- 
+<div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+  </form>
+</div> -->

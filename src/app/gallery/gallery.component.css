@@ -1,0 +1,12 @@
+#gallery img{
+    width: 100%;
+    padding-top: 50px;
+    cursor: pointer;
+}
+#gallery{
+    width: 100%;
+}
+#gallery img:hover{
+filter:brightness(0.6);
+transition:all 500ms ease-in;
+}
