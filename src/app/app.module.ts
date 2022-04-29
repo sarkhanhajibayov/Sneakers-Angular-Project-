@@ -10,6 +10,7 @@ import { HomeModule } from './home-components/home.module';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material.module';
 import { CommonModule } from '@angular/common';
+import {CabinetModule} from './cabinet/cabinet.module'
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +25,9 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule,
-    HomeModule
+    HomeModule,
+    CabinetModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

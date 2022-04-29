@@ -1,0 +1,124 @@
+
+
+<!-- Mat Sidenav Examples -->
+
+<!-- #1 Method -->
+
+<!-- <mat-sidenav-container>
+     <mat-sidenav mode="side" [(opened)]="opened">Sidenav</mat-sidenav>
+     <mat-sidenav-content >Main
+         <button style="border: none;" (click)="opened=!opened"><mat-icon >menu</mat-icon></button>
+     </mat-sidenav-content>
+ </mat-sidenav-container> -->
+
+ <!-- #2 Method
+ <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">Sidenav</mat-sidenav>
+    <mat-sidenav-content >Main
+        <button (click)='sidenav.open()'><mat-icon >Open</mat-icon></button>
+        <button (click)='sidenav.close()'><mat-icon >Close</mat-icon></button>
+
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- 
+#3Method -->
+<!-- <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">Sidenav</mat-sidenav>
+    <mat-sidenav-content >Main
+        <button (click)='sidenav.toggle()'><mat-icon >menu</mat-icon></button>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+<!-- Mat Menu Examples -->
+
+
+<!-- <mat-menu #appMenu ='matMenu' xPosition="after" yPosition="above">
+    <button mat-menu-item [matMenuTriggerFor]="subMenu">Adidas</button>
+    <button mat-menu-item>Nike</button>
+    <button mat-menu-item>Puma</button>
+    <button mat-menu-item>Reebok</button>
+    <button mat-menu-item>New Balance</button>
+    <button mat-menu-item>Asics</button>
+</mat-menu>
+
+<button class="center" mat-flat-button [matMenuTriggerFor]="appMenu">Brands</button>
+
+<mat-menu #subMenu ='matMenu'>
+    <button mat-menu-item>Ozweego</button>
+    <button mat-menu-item [matMenuTriggerFor]="modelsMenu">Yezzy</button>
+    <button mat-menu-item>Nite Jogger</button>
+</mat-menu>
+
+<mat-menu #modelsMenu ='matMenu'>
+    <button mat-menu-item>350</button>
+    <button mat-menu-item>700</button>
+</mat-menu>
+
+With name at the end
+
+<mat-menu #lazyMenu ='matMenu'>
+    <ng-template matMenuContent let-name="name">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Log out {{name}}</button>
+    </ng-template>
+</mat-menu>
+
+<button
+  mat-flat-button
+   [matMenuTriggerData]="{name:'Sarkhan'}"
+    [matMenuTriggerFor]="lazyMenu">
+    Sarkhan
+</button>
+<button
+  mat-flat-button
+   [matMenuTriggerData]="{name:'Sneakers'}"
+    [matMenuTriggerFor]="lazyMenu">
+    Sneakers
+</button> -->
+
+
+
+<mat-sidenav-container  fullscreen>
+    <mat-sidenav mode="side" #sidenav>
+        <mat-list>
+            <mat-list-item>
+                <img style="height: 50px; width: 50px;" src="https://www.graphicsprings.com/filestorage/stencils/07846d9036424f00ee3f2d852fb162ba.png?width=500&height=500" alt="">
+                <span ><strong class="text-white">Sneakers</strong></span>
+             </mat-list-item>
+        </mat-list>
+        <mat-nav-list class="pl-3" (click)="sidenav.close()">
+            <a mat-list-item routerLink="/">
+                <mat-icon>dashboard</mat-icon>
+                <span class="pl-2">Dashboard</span>
+            </a>
+            <a mat-list-item routerLink="about">
+                <mat-icon>timeline</mat-icon>
+                <span class="pl-2">Sales</span>
+            </a>
+            <a mat-list-item routerLink="about">
+                <mat-icon>store</mat-icon>
+                <span class="pl-2">Brands</span>
+            </a>
+            <a mat-list-item routerLink="about">
+                <mat-icon>view_headline</mat-icon>
+                <span class="pl-2">Static information</span>
+            </a>
+
+        
+            
+ 
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-toolbar >
+        <button class="pt-2" style="background-color: #674b47; color: white; border: none;" (click)='sidenav.toggle()'><mat-icon >menu</mat-icon></button>
+        
+        <span class="example-spacer"></span>
+
+        <div class="container">
+            <input class='js-search' type="text">
+                <i class="fas fa-search"></i>
+              
+          </div>
+    </mat-toolbar>
