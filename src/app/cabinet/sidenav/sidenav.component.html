@@ -80,45 +80,66 @@ With name at the end
 
 
 
-<mat-sidenav-container  fullscreen>
-    <mat-sidenav mode="side" #sidenav>
-        <mat-list>
-            <mat-list-item>
-                <img style="height: 50px; width: 50px;" src="https://www.graphicsprings.com/filestorage/stencils/07846d9036424f00ee3f2d852fb162ba.png?width=500&height=500" alt="">
-                <span ><strong class="text-white">Sneakers</strong></span>
-             </mat-list-item>
-        </mat-list>
-        <mat-nav-list class="pl-3" (click)="sidenav.close()">
-            <a mat-list-item routerLink="/">
-                <mat-icon>dashboard</mat-icon>
-                <span class="pl-2">Dashboard</span>
-            </a>
-            <a mat-list-item routerLink="about">
-                <mat-icon>timeline</mat-icon>
-                <span class="pl-2">Sales</span>
-            </a>
-            <a mat-list-item routerLink="about">
-                <mat-icon>store</mat-icon>
-                <span class="pl-2">Brands</span>
-            </a>
-            <a mat-list-item routerLink="about">
-                <mat-icon>view_headline</mat-icon>
-                <span class="pl-2">Static information</span>
-            </a>
+<mat-toolbar>
 
+    <mat-toolbar-row>
+      
+    <button style="background-color: #674b47; border: none ; color: white;" (click)="isExpanded = !isExpanded">
+      <mat-icon aria-label="Menu">menu</mat-icon>
+    </button>
+  
+    <div class="container justify-content-start">
+    <img style="width: 50px; height: 50px;" src="https://www.graphicsprings.com/filestorage/stencils/07846d9036424f00ee3f2d852fb162ba.png?width=500&height=500">
+    <a style="text-decoration: none; color: white;" [routerLink]="['/home']" class="navbar-brand">Sneakers</a>
+    </div>
+  
+    <span class="example-spacer"></span>
+  
+    <p>
+        <mat-form-field class="mx-3" appearance="standard">
+          <mat-label>Search</mat-label>
+          <input matInput >
+          <mat-icon matSuffix>search</mat-icon>
+          
+        </mat-form-field>
+      </p>
+      <a class="icon" href="#"><mat-icon class="mx-3 my-1" style="color: wheat;">notifications</mat-icon></a>
+      <a class="icon"href="#"><mat-icon class="mx-3 my-1" style="color: wheat;"> mail_outline</mat-icon></a>
+        <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="rounded-circle pb-1 " style="width: 50px;"
+  alt="Avatar" />
+  
+  <a href="#" class="header profile" style="color: wheat; font-size: 18px;" class="pl-3">Jonh Doe</a>
+  
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-drawer-container  class="example-container mat-typography" autosize>
+    
+      <mat-drawer   #drawer mode="side" disableClose="true" opened="true">
+        <mat-nav-list >
+          <a class="mt-3" mat-list-item [routerLink]="['/dashboard']">
+              <mat-icon>dashboard</mat-icon>
+              <span mat-line *ngIf="isExpanded" class="pl-3" >Dashboard</span>
+          </a>
+          <a class="mt-3" mat-list-item routerLink="about">
+              <mat-icon>timeline</mat-icon>
+              <span mat-line *ngIf="isExpanded" class="pl-3" >Sales</span>
+          </a>
+          <a class="mt-3" mat-list-item routerLink="about">
+              <mat-icon>store</mat-icon>
+              <span mat-line *ngIf="isExpanded" class="pl-3" >Brands</span>
+          </a>
+          <a class="mt-3" mat-list-item routerLink="about">
+              <mat-icon>view_headline</mat-icon>
+              <span mat-line *ngIf="isExpanded"class="pl-3" >Static information</span>
+          </a>
+      </mat-nav-list>
+      </mat-drawer>
+      <mat-drawer-content>
+        <router-outlet></router-outlet>
         
-            
- 
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-toolbar >
-        <button class="pt-2" style="background-color: #674b47; color: white; border: none;" (click)='sidenav.toggle()'><mat-icon >menu</mat-icon></button>
-        
-        <span class="example-spacer"></span>
-
-        <div class="container">
-            <input class='js-search' type="text">
-                <i class="fas fa-search"></i>
-              
-          </div>
-    </mat-toolbar>
+      </mat-drawer-content>
+      <div class="example-sidenav-content">
+      </div>
+      
+    </mat-drawer-container>
+  
