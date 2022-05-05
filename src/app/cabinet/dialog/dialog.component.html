@@ -1,0 +1,84 @@
+<h1 mat-dialog-title class="text-center" >Məhsul əlavə et</h1>
+<div mat-dialog-content class="text-center" >
+    <form [formGroup]="productionForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Brend</mat-label>
+            <input formControlName="brand" type="text" matInput placeholder="Brend">
+            <mat-icon matSuffix>local_offer</mat-icon>
+            
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Kateqoriya</mat-label>
+            <mat-select formControlName="category">
+                <mat-option value="Gündəlik">Gündəlik</mat-option>
+                <mat-option value="Qaçış">Qaçış</mat-option>
+                <mat-option value="Futbol">Futbol</mat-option>
+                <mat-option value="Basketbol">Basketbol</mat-option>
+              </mat-select>
+            <mat-icon matSuffix>layers</mat-icon>
+           
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Model</mat-label>
+            <input formControlName="model" matInput placeholder="Model">
+            <mat-icon matSuffix>style</mat-icon>
+            
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Ölçü</mat-label>
+            <input formControlName="size" type="number" matInput placeholder="Ölçü">
+            <mat-icon matSuffix>size</mat-icon>
+          </mat-form-field>
+    
+    
+        
+        <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Qiymət</mat-label>
+            <input formControlName="price" matInput type="number" class="example-right-align" placeholder="0">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix>.00</span>
+          </mat-form-field>
+       
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Ədəd</mat-label>
+            <input formControlName="amount" type="number" matInput placeholder="Ədəd">
+            <mat-icon matSuffix>format_list_numbered</mat-icon>
+            
+          </mat-form-field>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Əlavə edən işçi</mat-label>
+            <input formControlName="employee" type="text" matInput placeholder="İşçi">
+            <mat-icon matSuffix>person</mat-icon>
+            
+          </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date</mat-label>
+              <input formControlName="date" matInput [matDatepicker]="picker">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+    
+          <label class="pt-4" for=""><h2 >Anbar</h2></label>
+          <mat-radio-group formControlName="warehouse" >
+              <mat-radio-button class="p-4" *ngFor="let anb of anbarList" [value]="anb">
+                {{anb}}
+              </mat-radio-button>
+
+          </mat-radio-group>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Komment</mat-label>
+            <textarea formControlName="comment" matInput ></textarea>
+          </mat-form-field>
+    </form>
+    
+    </div>
+    <div mat-dialog-actions [align]="'end'">
+        <button mat-raised-button color="primary" (click)="addProduct()"> {{actionBtn}}</button>
+        <button mat-raised-button color="warn" mat-dialog-close="">Ləğv et</button>
+    </div>

@@ -1,21 +1,23 @@
-mat-sidenav-container{
-    height: 100%;
-}
-mat-sidenav{
-    width: 20%;
-    background-color: black;
 
-}
-mat-sidenav,mat-sidenav-content{
-    padding: 16px;
+mat-drawer-container{
+  height: 100%;
 }
 
 mat-nav-list a{
-    color: white;
+    color: black;
+    font-weight: 600;
 }
-
+mat-nav-list a:hover{
+  color: #FF4081;
+  text-decoration: none;
+}
+mat-nav-list a:active{
+  color: #FF4081;
+  text-decoration: none;
+}
 mat-toolbar {
     background-color: #674b47;
+    display: flex;
 }
 .example-spacer {
     flex: 1 1 auto;
@@ -28,28 +30,22 @@ mat-toolbar {
     align-items: center;
   }
   
-  input[type=text]{
-    position: relative;
-    padding: 5px 20px;
-    width: 30px;
-    color: #525252;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(to right, #FFFFFF 0%,#464747 #F9F9F9 100%);
-    transition: width 0.4s ease;
-    outline: none;
+  mat-toolbar-row a:hover mat-icon{
+    color: #ff0018 !important;
   }
-    input[type=text]:focus{
-     width: 300px; }
-  
-  
-  i{
-    position: relative;
-    left: -30px;
-    color: #674b47;
+   
+  mat-toolbar-row a{
+    text-decoration: none;
   }
+  mat-form-field.mat-form-field {
+   font-size: 16px;
+   color: wheat;
+   padding-top: 17px;
+ }
+
+ mat-accordion mat-panel-title{
+  font-size: 16px;
+  
+ }
   
   

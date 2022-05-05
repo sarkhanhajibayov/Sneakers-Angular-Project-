@@ -1,0 +1,27 @@
+{
+  "productList": [
+    {
+      "brand": "Nike",
+      "category": "Basketbol",
+      "model": "Air Jordan",
+      "size": 44,
+      "price": 200,
+      "amount": 2,
+      "employee": "Sərxan",
+      "date": "2022-05-04T20:00:00.000Z",
+      "warehouse": "Nərimanov",
+      "comment": "Yeni",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
