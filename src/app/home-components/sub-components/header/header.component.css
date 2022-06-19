@@ -1,7 +1,143 @@
-#main-nav{
-    background-color: black;
-}
-#main-nav img{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+img{
+    display: inline-block;
     width: 60px;
     height: 60px;
+
+}
+ header{
+    background: black;
+    padding: 7px 0;
+    
+ }
+
+ .navbar{
+     margin: 0;
+     display: flex;
+     align-items: center;
+ }
+
+.navbar ul{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+}
+
+.navbar-link{
+    align-self: center;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    padding-right: 2em;
+    color: white;
+}
+.navbar-logo{
+    flex: 1;
+    user-select: none;
+    align-self: center;
+
+}
+
+.navbar-button{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 9px 47.5px;
+    margin:0 auto;
+    border: none;
+    border-radius: 2%;
+}
+
+.navbar-toggle{
+    display: none;
+}
+
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+
+@media (max-width:1140px){
+    .navbar ul{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 0;
+    }
+
+    .navbar-logo{
+      flex: none;
+    }
+    .navbar-toggle{
+        display: block;
+    }
+    
+    .navbar-link{
+        display: none;
+        width: 100%;
+        justify-content: center;
+    }
+    .navbar-link a{
+        padding: 0;
+    }
+
+    .navbar-button{
+        display: none;
+        width: 100%;
+       justify-content: center;
+    }
+
+    .active{
+        display: block;
+    }
 }
