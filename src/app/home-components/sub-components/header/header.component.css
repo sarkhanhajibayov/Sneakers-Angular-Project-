@@ -12,7 +12,12 @@ img{
     padding: 7px 0;
     
  }
+ .container{
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
 
+}
  .navbar{
      margin: 0;
      display: flex;
