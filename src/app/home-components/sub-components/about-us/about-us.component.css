@@ -3,6 +3,7 @@
 }
 #about-us{
     position: relative;
+    margin-bottom: 2em;
 }
  #about-us img:hover{
     filter:brightness(0.7);
@@ -18,7 +19,8 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 600;
+    color: #111111;
 }
 #about-us .article .header{
     font-family: 'Playfair Display', serif;
@@ -30,8 +32,9 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
-    font-weight: 400;
+    font-weight: 600;
     padding-bottom: 20px;
+    color: #111111;
 }
 .particles {
     position: absolute;

@@ -1,53 +1,78 @@
-#brands-section img{
-    width: 100%;
-    position: relative;
-}
-#brands-section .gallery img{
-    height: 300px;
-}
-#trends{
-    position: absolute;
-    width: 400px;
-    min-height: 300px;
-    box-shadow: 5px 5px 20px 0 rgb(0 0 0 / 20%);
-    z-index: 2;
-    top: 20%;
-    left: 40%;
-    background-color: white;
-    
-}
-#trends h3{
-    color: #674b47;
-    font-size: 5rem;
-    font-family: 'Playfair Display', serif;
-    font-weight:700;
-    padding-bottom: 50px;
-}
-#trends a{
-text-decoration: none;
-color: #000;
-font-size: 1rem;
-font-weight: 700;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+img{
+    max-width: 100%;
+    display: block;
 }
 
-#trends h3{
-padding-top: 120px;
+.trends{
+    display: flex;
+    justify-content: space-between;
 }
-#brands-section .product{
-    padding-left: 100px;
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
 }
-.product .container{
-    height: 200px;
-    width: 500px;
+
+.trends-card{
+    width: 50%;
+    position: relative;
 }
-#brands-section p{
-    font-size: 1rem;
-    line-height: 1.6;
+
+.trends-card-box{
+    background: white;
+    padding: 5em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    right: -5%;
+    box-shadow: 5px 0px 8px #888888;
 }
+
+.trends-card-header{
+    font-family: 'Playfair Display', serif !important;
+    font-size: 6rem;
+    color: #674b47;
+    padding-bottom: 0.5em;
+   
+}
+
+.trends-card-link{
+    font-weight: 700;
+}
+
+.products-card{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.products-card img{
+    width: 70%;
+}
+
+.products-price{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    align-self: flex-start;
+    padding-top: 1em;
+    padding-left: 5em;
+}
+
+.products-main{
+    text-align: right;
+}
+
 .hover-underline-animation {
     display: inline-block;
     position: relative;
     color: #0087ca;
+    cursor: pointer;
+    font-weight: 700;
   }
   
   .hover-underline-animation:after {
@@ -67,21 +92,47 @@ padding-top: 120px;
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-  .gallery a{
-      color: black;
-      text-decoration: none;
-  }
-  .gallery a:hover{
-      color: purple;
-      transition: all 500ms ease;
-  }
-  .gallery .container img{
-      display: block;
-  }
-  .gallery .container img{
-      transform: scale(1);
-      transition: all 500ms ease;
-  }
-  .gallery .container:hover img{
-      transform: scale(1.05);
-  }
+
+@media(max-width:768px){
+    .trends{
+        flex-direction: column;
+    }
+
+    .trends-card{
+        margin-bottom: 2em;
+    }
+    .products{
+        width: 100%;
+        
+    }
+
+    .trends-card{
+        width: 100%;
+    }
+
+    .products-card img, .products-price{
+        align-self: center;
+        padding: 0;
+    }
+
+    .products-main{
+       align-self: center;
+    }
+}
+
+@media(max-width:425px){
+
+    .trends-card{
+        width: 100%;
+    }
+
+    .trends-card-box{
+        padding: 3em 1em;
+    }
+    .products-card{
+        width: 100%;
+    }
+    .trends-card-header{
+        font-size: 4rem;
+    }
+}
