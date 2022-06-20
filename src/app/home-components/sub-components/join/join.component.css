@@ -1,5 +1,10 @@
 .join-section img{
     width: 100%;
+    height: 100%;
+}
+
+.join-section{
+    margin-bottom: 3em;
 }
 
 .advantages h2 {
@@ -40,4 +45,15 @@
     position: absolute;
     background-color:  #674b47;
     top: 37%;
+}
+@media(max-width:768px){
+    .white{
+        background-color: #674b47;
+    }
+}
+
+@media(max-width:425px){
+    .background{
+        top: 10%;
+    }
 }

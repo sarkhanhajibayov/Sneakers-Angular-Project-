@@ -19,9 +19,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout'
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     AppComponent,
+    
   
   
   ],
@@ -46,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutModule,
     FormsModule,
     MatNativeDateModule,
-    HttpClientModule
+    HttpClientModule,
+    SlickCarouselModule
    
   ],
   providers: [],

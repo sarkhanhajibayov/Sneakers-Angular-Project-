@@ -1,67 +1,91 @@
- #information img{
-    width: 100%;
-    
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap');
+
+img{
+    max-width: 100%;
 }
+
 #information{
-    height: 800px;
+    display: flex;
+    justify-content: space-between;
+    padding: 4em 0;
 }
-#information .header {
+
+.information-main{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.information-secondary{
+    width: 50%;
+}
+
+.main-title{
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     padding: 20px 0;
     font-size: 2.5rem;
-    color: black;
+    color: black; 
 }
-#information .jordan{
+
+.main-text{
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     font-weight: 400;
-    padding-bottom: 20px;
 }
-.second{
+
+.secondary-background{
     background-image: url(https://wallpaperaccess.com/full/2697832.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2em;
+    padding: 2em;
 }
 
-#information img:hover{
-    filter:brightness(0.7);
-    transition:all 500ms ease-in;
-}
-#information .second .header{
-    color: white;
-    width: 80%;
+.secondary-title{
     font-family: 'Playfair Display', serif;
     font-size: 4rem;
     font-weight: 700;
+    color: white;
+    line-height: 1.1;
 }
-#information .second p{
+
+.secondary-text{
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
     font-weight: 400;
     color: white;
 }
-.basket{
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-}
-.hover-rotate {
-    overflow: hidden;
-    width: 100%;
+  @media (max-width:768px){
+    #information{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .information-secondary,.information-main{
+    width: 80%;
+    align-items: center;
+    padding-bottom: 2em;
+    }
+    .secondary-background{
+        height:600px;
+    }
   }
-  
-  .hover-rotate img {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    max-width: 100%;
+  @media (max-width: 375px){
+    .secondary-title{
+        font-size: 3rem;
+    }
+    .information-secondary,.information-main{
+        width: 100%;
+    }
+    .secondary-title,.secondary-text{
+        padding: 0 2px;
+    }
   }
-  
-  .hover-rotate:hover img {
-    transform: scale(1.1) rotate(5deg);
-  }
-  

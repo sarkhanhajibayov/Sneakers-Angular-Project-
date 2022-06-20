@@ -21,7 +21,7 @@ import { PreFooterComponent } from './sub-components/pre-footer/pre-footer.compo
 import { GalleryComponent } from './sub-components/gallery/gallery.component';
 import { SignUpComponent } from './sub-components/sign-up/sign-up.component';
 import { HomeComponent } from './sub-components/home/home.component';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { HomeComponent } from './sub-components/home/home.component';
    SignUpComponent,
    GalleryComponent,
    BeforeLoginComponent,
-   HomeComponent
+   HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +48,7 @@ import { HomeComponent } from './sub-components/home/home.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    SlickCarouselModule
   ],
   providers: [
     // HomeService
