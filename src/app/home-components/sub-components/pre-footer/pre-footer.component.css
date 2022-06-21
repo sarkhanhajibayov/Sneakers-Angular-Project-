@@ -1,6 +1,7 @@
 .advantages{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    padding: 3em 0;
 }
 
 .advantage-box{
@@ -14,4 +15,70 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    user-select: none;
+    cursor: text;
 }
+
+.advantage-item:hover {
+    color:#674b47 ;
+}
+
+.advantage-title{
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+    cursor: pointer;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+@media(max-width:1024px){
+    .advantage-box{
+        width: 30%;
+    }
+
+    .advantage-text{
+        text-align: center;
+    }
+}
+
+@media(max-width:768px){
+  .advantages{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .advantage-box{
+    padding-bottom: 2em;
+    width: 80%;
+  }
+  }
+
+  @media(max-width:425px){
+    .advantages{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+  }

@@ -1,12 +1,38 @@
-#gallery img{
-    width: 100%;
-    cursor: pointer;
-}
+
 #gallery{
     width: 100%;
+    height: 100%;
     padding-top: 3em;
 }
 #gallery img:hover{
 filter:brightness(0.6);
 transition:all 500ms ease-in;
+}
+
+.background{
+
+}
+.gallery-background-left{
+    background-image:url("https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/d5b16412ae1d5201aa988a9c/pexels-photo-4219176.jpeg") ;
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.gallery-background-center{
+    background-image:url("https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/c9e45b83d0545d9aa57b6587/pexels-photo-4219177.jpeg") ;
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.gallery-background-right{
+    background-image:url("https://images03.nicepage.com/a1389d7bc73adea1e1c1fb7e/80692cd5e5f0571b8dbc2f54/pexels-photo-4219179.jpeg") ;
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
