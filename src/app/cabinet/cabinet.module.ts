@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AfterLoginComponent } from './after-login/after-login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { MatCardAvatar } from '@angular/material/card';
 import { SalesComponent } from './sales/sales.component';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { DialogComponent } from './dialog/dialog.component';

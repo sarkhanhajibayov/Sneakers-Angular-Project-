@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 mat-drawer-container{
   height: 100%;
 }
@@ -45,7 +45,55 @@ mat-toolbar {
 
  mat-accordion mat-panel-title{
   font-size: 16px;
-  
  }
-  
+
+ .example-header-image {
+  background-image: url('https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+  .toolbar-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding:0 1em;
+    cursor: pointer;
+    
+  }
+  .material-icons.color_white { color: #FFFFFF; }
+
+  .toolbar-main{
+    color: white;
+  }
+
+  .toolbar-logo{
+    width: 60px;
+    width: 60px;
+  }
+
+  .settings,.profile,.log-out{
+    display: flex;
+    align-items: center;
+    padding: 1em;
+  }
+  .toolbar-buttons{
+    padding-right: 12em;
+  }
+
+  mat-accordion{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 7px;
+    border: none;
+    outline: none;
+
+  }
   

@@ -80,7 +80,7 @@ With name at the end
 
 
 
-<mat-toolbar>
+<!-- <mat-toolbar>
 
     <mat-toolbar-row>
       
@@ -111,10 +111,60 @@ With name at the end
   <a href="#" class="header profile" style="color: wheat; font-size: 18px;" class="pl-3">Jonh Doe</a>
   
   </mat-toolbar-row>
+  </mat-toolbar> -->
+
+
+  <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)='drawer.toggle()'>
+      <mat-icon class="material-icons color_white" >menu</mat-icon>
+    </button>
+    <img class="toolbar-logo" src="https://www.graphicsprings.com/filestorage/stencils/07846d9036424f00ee3f2d852fb162ba.png?width=500&height=500" alt="">
+    <span class="toolbar-main">Sneakers</span>
+    <span class="example-spacer"></span>
+    
+    <div class="toolbar-buttons">
+    <button mat-icon-button class="example-icon notifications_none" aria-label="Example icon-button with heart icon">
+      <mat-icon class="material-icons color_white" matBadge="3" matBadgeColor="warn" >notifications_none</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon matBadge="4" matBadgeColor="warn" class="material-icons color_white">mail_outline</mat-icon>
+    </button>
+  </div>
+
+
+    <mat-accordion multi class="mx-4">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <p class="toolbar-text"><a>Hi, <strong>Jonh Doe</strong></a></p>
+        </mat-expansion-panel-header>
+
+
+        <div class="settings">
+            <p>Settings</p>
+            <mat-icon>settings</mat-icon>
+        </div>
+
+        <div class="profile">
+          <p>My Profile</p>
+          <mat-icon>person</mat-icon>
+      </div>
+
+      <div class="log-out">
+        <p>Log Out</p>
+        <mat-icon>exit_to_app</mat-icon>
+    </div>
+
+  </mat-expansion-panel>
+    </mat-accordion>
   </mat-toolbar>
+
+  
+
+
   <mat-drawer-container   class="example-container mat-typography" autosize>
     
-      <mat-drawer   #drawer mode="side" disableClose="true" opened="true">
+      <mat-drawer   #drawer mode="side" disableClose="true" opened="false">
         <mat-nav-list >
           <a class="mt-2" mat-list-item [routerLink]="['/dashboard']">
               <mat-icon>dashboard</mat-icon>
@@ -122,7 +172,7 @@ With name at the end
           </a>
           <a class="mt-2" mat-list-item [routerLink]="['/sales']">
               <mat-icon>timeline</mat-icon>
-              <span mat-line  class="pl-2" >Finance</span>
+              <span mat-line  class="pl-2" >Sales</span>
           </a>
           <a class="mt-2" mat-list-item [routerLink]="['/warehouse']">
               <mat-icon>store</mat-icon>

@@ -33,7 +33,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatFormFieldModule } from '@angular/material/form-field';
-
+import {MatBadgeModule} from '@angular/material/badge'
 
 
 @NgModule({
@@ -90,6 +90,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTreeModule,
     MatIconModule,
     MatMenuModule,
+    MatBadgeModule
   ],
 })
 export class MaterialModule {}
