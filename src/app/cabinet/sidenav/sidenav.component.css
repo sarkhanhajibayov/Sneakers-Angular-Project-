@@ -18,6 +18,7 @@ mat-nav-list a:active{
 mat-toolbar {
     background-color: #674b47;
     display: flex;
+    position: relative;
 }
 .example-spacer {
     flex: 1 1 auto;
@@ -29,6 +30,7 @@ mat-toolbar {
     justify-content: end;
     align-items: center;
   }
+  
   
   mat-toolbar-row a:hover mat-icon{
     color: #ff0018 !important;
@@ -67,6 +69,10 @@ mat-toolbar {
     cursor: pointer;
     
   }
+
+  .toolbar-main{
+    cursor: pointer;
+  }
   .material-icons.color_white { color: #FFFFFF; }
 
   .toolbar-main{
@@ -83,6 +89,25 @@ mat-toolbar {
     align-items: center;
     padding: 1em;
   }
+
+  .settings a,.profile a,.log-out a{
+    text-decoration: none;
+    color: #000000;
+    flex: 1 1 auto;
+  }
+
+  mat-expansion-panel a:hover{
+  color: #ff0018;
+  }
+
+  mat-expansion-panel mat-icon:hover{
+    color: #ff0018;
+  }
+
+  mat-expansion-panel p{
+    margin: 0!important;
+  }
+
   .toolbar-buttons{
     padding-right: 12em;
   }
@@ -92,8 +117,59 @@ mat-toolbar {
     z-index: 10;
     right: 0;
     top: 7px;
-    border: none;
-    outline: none;
-
   }
+
+  mat-drawer{
+    width: 10%;
+  }
+
+  @media (max-width:768px){
+    .toolbar-text{
+      display: none;
+    }
+
+    mat-expansion-panel-header{
+      padding-left:1em;
+    }
+
+    mat-accordion{
+      width: 20%;
+    }
+    .mat-content{
+      flex: 0;
+    }
+
+    .toolbar-buttons{
+      padding-right: 8.5em;
+    }
+
+    .mat-expansion-panel-body.ng-tns-c281-0{
+      padding: 0;
+    }
+
+    .settings,.profile,.log-out{
+      padding: 0;
+    }
+  }
+
+  @media (max-width:600px){
+    mat-accordion{
+      top: 4px;
+    }
+  }
+
   
+  @media (max-width:425px){
+
+    .toolbar-main{
+      display: none;
+    }
+    .settings a,.profile a,.log-out a{
+      display: none;
+    }
+
+    mat-expansion-panel-header{
+      padding: 0.5em;
+    }
+  }
+

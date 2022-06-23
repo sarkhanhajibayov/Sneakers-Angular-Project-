@@ -36,7 +36,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
    SignUpComponent,
    GalleryComponent,
    BeforeLoginComponent,
-   HomeComponent,
+   HomeComponent
   ],
   imports: [
     BrowserModule,

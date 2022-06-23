@@ -104,13 +104,12 @@ hr {
 
 @media (max-width:425px){
     .footer-list{
-        width: 40%;
-        align-self: flex-start;
+        width: 100%;
+        text-align: center;
     }
     .last{
         width: 100%;
-        align-self: center;
-        justify-self: center;
+        text-align: center;
     }
 
     .last h3 {
@@ -124,5 +123,10 @@ hr {
 
     .footer-list-item a{
         width: 100%;
+    }
+
+    .icons{
+        justify-content: center;
+        align-items: center;
     }
 }
