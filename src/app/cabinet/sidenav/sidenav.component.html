@@ -37,11 +37,45 @@
         </div>
 
 
-      <div class="log-out">
-        <p> <a href="#">Log Out</a></p>
+        <div class="status">
+          <p> <a [matMenuTriggerFor]="beforeMenu">Status</a></p>
+          <span class="example-spacer"></span>
+          <mat-icon>more_horiz</mat-icon>
+          <mat-menu #beforeMenu="matMenu" xPosition="before">
+
+            <div class="online">
+              <button mat-fab color="primary" class="green"></button>
+              <button mat-menu-item>Online</button>
+            </div>
+
+            <div class="away">
+              <button mat-fab  class="orange" ></button>
+              <button mat-menu-item>Away</button>
+            </div>
+
+            <div class="busy">
+              <button mat-fab class="red" ></button>
+              <button mat-menu-item>Busy</button>
+            </div>
+
+            <div class="invis">
+              <button mat-fab class="gray"></button>
+              <button mat-menu-item>Invisible</button>
+            </div>
+
+          </mat-menu>
+      </div>
+
+      
+      <div [routerLink]="['/sign-up']" class="log-out">
+        <p> <a>Log Out</a></p>
         <span class="example-spacer"></span>
         <mat-icon>exit_to_app</mat-icon>
     </div>
+
+
+    
+    
 
   </mat-expansion-panel>
     </mat-accordion>
@@ -65,20 +99,7 @@
           <a class="mt-2" mat-list-item [routerLink]="['/warehouse']">
               <mat-icon>store</mat-icon>
               <span mat-line  class="pl-2" >Warehouse</span>
-          </a>
-          <!-- <mat-accordion class="app-nav-accordion">
-            <mat-expansion-panel class="mat-elevation-z0">
-              <mat-expansion-panel-header>
-                <mat-panel-title>Static Information</mat-panel-title>
-              </mat-expansion-panel-header>
-              <mat-nav-list>
-                <a mat-list-item>Warehouse</a>
-                  <a mat-list-item>Sales</a>
-              </mat-nav-list>
-            </mat-expansion-panel>
-          </mat-accordion> -->
-          
-          
+          </a> 
       </mat-nav-list>
       </mat-drawer>
       <mat-drawer-content>
@@ -89,4 +110,6 @@
       </div>
       
     </mat-drawer-container>
+
+
   

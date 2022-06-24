@@ -84,26 +84,78 @@ mat-toolbar {
     width: 60px;
   }
 
-  .settings,.profile,.log-out{
+  .settings,.profile,.log-out,.status{
     display: flex;
     align-items: center;
     padding: 1em;
   }
 
-  .settings a,.profile a,.log-out a{
+  .settings a,.profile a,.log-out a,.status a{
     text-decoration: none;
     color: #000000;
     flex: 1 1 auto;
   }
 
-  mat-expansion-panel a:hover{
-  color: #ff0018;
+  .settings{
+    position: relative;
   }
 
-  mat-expansion-panel mat-icon:hover{
+  .profile:hover a,.profile:hover mat-icon{
     color: #ff0018;
   }
 
+  
+  .log-out:hover a,.log-out:hover mat-icon{
+    color: #ff0018;
+  }
+
+  
+  .status:hover a,.status:hover mat-icon{
+    color: #ff0018;
+  }
+
+  
+  .settings:hover a,.settings:hover mat-icon{
+    color: #ff0018;
+  }
+
+  .status:hover mat-menu{
+     display: block;
+  }
+
+  .online,.away,.invis,.busy{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 1em;
+  }
+
+   .green,.orange,.red,.gray{
+    width: 20px;
+    height: 20px;
+  }
+
+  .green {
+    background: green;
+  }
+
+  .orange{
+    background: orange;
+  }
+
+  .red{
+    background: red;
+  }
+
+  .gray{
+    background: gray;
+  }
+
+  #cdk-overlay-0{
+    position: absolute;
+    right: 5.5em;
+    top: -1.5em;
+  }
   mat-expansion-panel p{
     margin: 0!important;
   }

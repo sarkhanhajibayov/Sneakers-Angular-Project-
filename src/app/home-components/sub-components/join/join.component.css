@@ -47,6 +47,14 @@
     background-color:  #674b47;
     top: 37%;
 }
+
+@media(max-width:1024px){
+    .hover-rotate img{
+        width: 100%;
+    }
+}
+
+
 @media(max-width:768px){
     .white{
         background-color: #674b47;
