@@ -9,6 +9,7 @@ import { CabinetModule } from './cabinet/cabinet.module';
 import { DashboardComponent } from './cabinet/dashboard/dashboard.component';
 import { SalesComponent } from './cabinet/sales/sales.component';
 import { WarehouseComponent } from './cabinet/warehouse/warehouse.component';
+import { BrandsComponent } from './cabinet/brands/brands.component';
 const routes: Routes = [
   
   HomeModule.childRoutes([
@@ -27,7 +28,8 @@ const routes: Routes = [
    {path: 'after-login' , component: AfterLoginComponent},
    {path: 'dashboard' , component: DashboardComponent},
    {path: 'sales' , component: SalesComponent},
-   {path: 'warehouse' , component: WarehouseComponent}
+   {path: 'warehouse' , component: WarehouseComponent},
+   {path: 'brands' , component: BrandsComponent}
  ]),
 ];
 

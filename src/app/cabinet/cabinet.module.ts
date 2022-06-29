@@ -14,6 +14,7 @@ import { MatCardAvatar } from '@angular/material/card';
 import { SalesComponent } from './sales/sales.component';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { BrandsComponent } from './brands/brands.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DialogComponent } from './dialog/dialog.component';
     SalesComponent,
     WarehouseComponent,
     DialogComponent,
+    BrandsComponent,
 
     
   ],
