@@ -12,9 +12,13 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public getBrands(): Observable <Brand[]>{
+  public getBrands() : Brand[]{
 
-    return this.http.get<Brand[]>(`${environment.apiUrl}/${this}`)
+    let brand = new Brand();
+    brand.id = 1;
+    brand.brand = "Adidas"
+
+    return [brand]
   }
 
   postProduct(data: any){

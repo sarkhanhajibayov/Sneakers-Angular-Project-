@@ -16,11 +16,12 @@ export interface PeriodicElement {
 })
 export class BrandsComponent implements OnInit {
   displayedColumns: string[] = ['id','brand'];
-  brandes:Brand[] = []
+  brands:Brand[] = []
   constructor(private apiService :ApiService) { }
 
   ngOnInit(): void {
-   this.apiService.getBrands().subscribe((result: Brand[]) => (this.brandes =result));
+  this.brands = this.apiService.getBrands();
+  console.log(this.brands);
   }
 
 }
