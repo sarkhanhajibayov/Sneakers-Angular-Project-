@@ -20,8 +20,7 @@ export class BrandsComponent implements OnInit {
   constructor(private apiService :ApiService) { }
 
   ngOnInit(): void {
-  this.brands = this.apiService.getBrands();
-  console.log(this.brands);
+    this.apiService.getBrands().subscribe((result:Brand[])=> (this.brands = result))
   }
 
 }
