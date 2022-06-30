@@ -9,16 +9,12 @@ import { Brand } from '../models/brand';
 })
 export class ApiService {
   url = "Brand";
+  myAppUrl: any;
 
   constructor(private http: HttpClient) { }
 
-  public getBrands() : Brand[]{
-
-    let brand = new Brand();
-    brand.id = 1;
-    brand.brand = "Adidas"
-
-    return [brand]
+  public getBrands() : Observable<Brand[]>{
+    return this.http.get<Brand[]>(`${environment.apiUrl}/${this.url}`)
   }
 
   postProduct(data: any){
