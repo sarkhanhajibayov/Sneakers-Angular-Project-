@@ -18,12 +18,12 @@ export class ApiService {
   }
 
   public updateBrand(brand:Brand) : Observable<Brand[]>{
-    return this.http.put<Brand[]>(`${environment.apiUrl}/${this.url}`,
+    return this.http.put<Brand[]>(`${environment.apiUrl}/${this.url}/update-brand`,
     brand)
   }
 
   public createBrand(brand:Brand) : Observable<Brand[]>{
-    return this.http.post<Brand[]>(`${environment.apiUrl}/${this.url}`,
+    return this.http.post<Brand[]>(`${environment.apiUrl}/${this.url}/add-brand`,
     brand)
   }
 

@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Brand } from '../models/brand';
 import { ApiService } from '../services/api.service';
 
@@ -18,16 +17,16 @@ export class EditBrandComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateBrand(brand:Brand){
+  updateBrand(brand: Brand){
     this.apiService.updateBrand(brand).subscribe((brands:Brand[]) => this.brandUpdated.emit(brands));
   }
 
-  deleteBrand(brand:Brand){
+  deleteBrand(brand: Brand){
     this.apiService.deleteBrand(brand).subscribe((brands:Brand[]) => this.brandUpdated.emit(brands));
 
   }
 
-  createBrand(brand:Brand){
+  createBrand(brand: Brand){
     this.apiService.createBrand(brand).subscribe((brands:Brand[]) => this.brandUpdated.emit(brands));
 
   }

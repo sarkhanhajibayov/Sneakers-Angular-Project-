@@ -16,6 +16,6 @@
   </tbody>
 </table>
 
-<app-edit-brand [brand]= 'brandToEdit'></app-edit-brand>
+<app-edit-brand [brand]= 'brandToEdit' (brandUpdated)="updateBrandList($event)"></app-edit-brand>
 
 

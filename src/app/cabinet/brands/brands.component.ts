@@ -24,6 +24,10 @@ export class BrandsComponent implements OnInit {
     this.apiService.getBrands().subscribe((result:Brand[])=> (this.brands = result))
   }
 
+  updateBrandList(brands:Brand[]){
+    this.brands=brands;
+  }
+
   initNewBrand(){
     this.brandToEdit = new Brand();
 
