@@ -15,6 +15,7 @@ import { SalesComponent } from './sales/sales.component';
 import { WarehouseComponent } from './warehouse/warehouse.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { BrandsComponent } from './brands/brands.component';
+import { EditBrandComponent } from './edit-brand/edit-brand.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrandsComponent } from './brands/brands.component';
     WarehouseComponent,
     DialogComponent,
     BrandsComponent,
+    EditBrandComponent,
 
     
   ],

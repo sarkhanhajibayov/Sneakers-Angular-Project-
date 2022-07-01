@@ -1,22 +1,5 @@
-<!-- <table mat-table class="mat-elevation-z8">
 
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Id </th>
-      <td mat-cell *matCellDef="let brands"> {{brands.id}} </td>
-    </ng-container>
-  
- 
-    <ng-container matColumnDef="brand" *ngFor="let brands of brandes">
-      <th mat-header-cell *matHeaderCellDef> Brand </th>
-      <td mat-cell *matCellDef="let brands"> {{brands.brand}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let brands; columns: displayedColumns;"></tr>
-  </table> -->
-
-
-
+<button (click)="initNewBrand()">Create New Brand</button>
 <table>
   <thead>
     <th>Id</th>
@@ -27,8 +10,12 @@
     <tr *ngFor="let brand of brands">
       <td>{{ brand.id }}</td>
       <td>{{ brand.brand }}</td>
-      
+      <td><button (click)="editBrand(brand)">Edit</button></td>
+
     </tr>
   </tbody>
 </table>
+
+<app-edit-brand [brand]= 'brandToEdit'></app-edit-brand>
+
 

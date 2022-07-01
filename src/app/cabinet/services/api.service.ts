@@ -17,16 +17,20 @@ export class ApiService {
     return this.http.get<Brand[]>(`${environment.apiUrl}/${this.url}`)
   }
 
-  postProduct(data: any){
-    return this.http.post<any>('http://localhost:8000/productList/',data)
+  public updateBrand(brand:Brand) : Observable<Brand[]>{
+    return this.http.put<Brand[]>(`${environment.apiUrl}/${this.url}`,
+    brand)
   }
-  getProduct (){
-    return this.http.get<any>('http://localhost:8000/productList/');
+
+  public createBrand(brand:Brand) : Observable<Brand[]>{
+    return this.http.post<Brand[]>(`${environment.apiUrl}/${this.url}`,
+    brand)
   }
-  putProduct(data:any, id : number){
-    return this.http.put<any>('http://localhost:8000/productList/'+id,data);
+
+  public deleteBrand(brand:Brand) : Observable<Brand[]>{
+    return this.http.post<Brand[]>(`${environment.apiUrl}/${this.url}/${brand.id}`,
+    brand)
   }
-  deleteProduct(id:number){
-    return this.http.delete<any>('http://localhost:8000/productList/'+id)
-  }
+
+
 }
