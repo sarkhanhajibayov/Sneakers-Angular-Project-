@@ -8,8 +8,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./edit-brand.component.css']
 })
 export class EditBrandComponent implements OnInit {
-@Input() brand?: Brand;
-@Output() brandUpdated = new EventEmitter<Brand[]>();
+
 
 
   constructor( private apiService:ApiService) { }
@@ -17,18 +16,10 @@ export class EditBrandComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateBrand(brand: Brand){
-    this.apiService.updateBrand(brand).subscribe((brands:Brand[]) => this.brandUpdated.emit(brands));
-  }
+  
 
-  deleteBrand(brand: Brand){
-    this.apiService.deleteBrand(brand).subscribe((brands:Brand[]) => this.brandUpdated.emit(brands));
+  
 
-  }
-
-  createBrand(brand: Brand){
-    this.apiService.createBrand(brand).subscribe((brands:Brand[]) => this.brandUpdated.emit(brands));
-
-  }
+ 
 
 }

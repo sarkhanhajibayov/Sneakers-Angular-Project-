@@ -1,36 +1,69 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
 import { Brand } from '../models/brand';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  url = "Brand";
+  e(id: any): void | Observable<any> {
+    throw new Error('Method not implemented.');
+  }
   myAppUrl: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private dialog: MatDialog,
+    private datePipe: DatePipe) { }
 
-  public getBrands() : Observable<Brand[]>{
-    return this.http.get<Brand[]>(`${environment.apiUrl}/${this.url}`)
+    public messageDialog(text: string, isRefresh: boolean) {
+      this.dialog.open(MessageDialogComponent, {
+        width: '500px',
+        position: {
+          top: '10px',
+        },
+        data: { Text: `${text}`, isRefresh: isRefresh },
+        autoFocus: false,
+      });
+    }
+
+    getBrands(limit: number, skip: number, isExport: boolean): Observable<any> {
+      this.myAppUrl = "https://localhost:44310/api";
+      let url = this.myAppUrl + `/Brand/get-brands?limit=${limit}&skip=${skip}&isExport=${isExport}`;
+      return this.http.get<any>(url);
+    }
+
+    getBrand(id: number): Observable<any> {
+      this.myAppUrl = "https://localhost:44310/api";
+      let url = this.myAppUrl + `/Brand/get-brand?id=${id}`;
+      return this.http.get<any>(url);
+    }
+
+  addBrand(model: any): Observable<any> {
+    this.myAppUrl = "https://localhost:44310/api";
+    let url = this.myAppUrl + '/Brand/create-brand';
+    return this.http.post<any>(url, model);
   }
 
-  public updateBrand(brand:Brand) : Observable<Brand[]>{
-    return this.http.put<Brand[]>(`${environment.apiUrl}/${this.url}/update-brand`,
-    brand)
+  updatePosition(model: any, id: number): Observable<any> {
+    this.myAppUrl = "https://localhost:44310/api";
+    let url = this.myAppUrl + '/Brand/update-brand?id=' + id;
+    return this.http.post<any>(url, model);
   }
 
-  public createBrand(brand:Brand) : Observable<Brand[]>{
-    return this.http.post<Brand[]>(`${environment.apiUrl}/${this.url}/add-brand`,
-    brand)
-  }
+  
+ 
 
-  public deleteBrand(brand:Brand) : Observable<Brand[]>{
-    return this.http.post<Brand[]>(`${environment.apiUrl}/${this.url}/${brand.id}`,
-    brand)
-  }
+ 
+
+
 
 
 }

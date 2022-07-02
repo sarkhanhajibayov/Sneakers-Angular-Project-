@@ -1,15 +1,1 @@
-<div *ngIf="brand">
-  <h2>{{ brand.id }}</h2>
-  <div>
-    Id:
-    <input [(ngModel)]="brand.id" placeholder="Id" />
-  </div>
-  <div>
-    Brand
-    <input [(ngModel)]="brand.brand" placeholder="Brand" />
-  </div>
-  <button (click)="updateBrand(brand)" *ngIf="brand.id">Save</button>
-  <button (click)="deleteBrand(brand)" *ngIf="brand.id">Delete</button>
-  <button (click)="createBrand(brand)" *ngIf="!brand .id">Create</button>
-</div>
 

@@ -16,6 +16,9 @@ import { WarehouseComponent } from './warehouse/warehouse.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { BrandsComponent } from './brands/brands.component';
 import { EditBrandComponent } from './edit-brand/edit-brand.component';
+import { AddBrandComponent } from './add-brand/add-brand.component';
+import { DeleteBrandComponent } from './delete-brand/delete-brand.component';
+import { MessageDialogComponent } from './message-dialog/message-dialog.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { EditBrandComponent } from './edit-brand/edit-brand.component';
     DialogComponent,
     BrandsComponent,
     EditBrandComponent,
+    AddBrandComponent,
+    DeleteBrandComponent,
+    MessageDialogComponent,
 
     
   ],
