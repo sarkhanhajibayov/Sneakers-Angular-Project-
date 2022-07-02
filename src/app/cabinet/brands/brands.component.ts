@@ -49,9 +49,9 @@ export class BrandsComponent implements OnInit {
   }
 
   openDeleteDialog(label:string, id:number){
-    this.dialog.open(DeleteComponent,{
-      data:{label: `${label}`, id: id}
-    });
+    // this.dialog.open(DeleteComponent,{
+    //   data:{label: `${label}`, id: id}
+    // });
   }
 
   get_brands(limit:number, skip:number, isExport:boolean){

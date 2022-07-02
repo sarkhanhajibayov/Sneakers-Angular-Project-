@@ -21,11 +21,11 @@ export class DeleteBrandComponent implements OnInit {
   }
 
   deleteFunction(){
-      if (data.status.errCode != 0) {
-        this.apiService.messageDialog(data.status.message, false);
-      } else {
-        this.apiService.messageDialog(data.status.message, true);
-      })
+      // if (data.status.errCode != 0) {
+      //   this.apiService.messageDialog(data.status.message, false);
+      // } else {
+      //   this.apiService.messageDialog(data.status.message, true);
+      // })
       
       
   }

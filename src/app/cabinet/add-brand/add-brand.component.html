@@ -8,13 +8,13 @@
       <mat-icon>close</mat-icon>
       </button>
         </div>
-        <div class="col-12" *ngIf="brandForm.controls.brand">
+        <div class="col-12" *ngIf="brandForm.controls['brand']">
             <span class="form-label">Vəzifə:</span>
             <mat-form-field class="example-full-width" appearance="fill">
                 <input matInput type="text" formControlName="brand">
             </mat-form-field>
-            <div class="row col-12 justify-content-center" *ngIf="brandForm.controls.brand.invalid && (brandForm.controls.brand.dirty || brandForm.controls.brand.touched )">
-                <div class="text-danger" *ngIf="brandForm.controls.brand.errors">
+            <div class="row col-12 justify-content-center" *ngIf="brandForm.controls['brand'].invalid && (brandForm.controls['brand'].dirty || brandForm.controls['brand'].touched )">
+                <div class="text-danger" *ngIf="brandForm.controls['brand'].errors">
                     Ad boş ola bilməz.
                 </div>
             </div>
@@ -32,4 +32,3 @@
         </div>
     </div>
 </form>
-
