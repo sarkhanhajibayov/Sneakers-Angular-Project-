@@ -54,9 +54,9 @@ export class AddBrandComponent implements OnInit {
         this.showSpinner = false;
       });
   }
-  add_position(){
+  add_brand(){
     if (this.brandForm.invalid) {
-      this.brandForm.get("name")?.markAsTouched();
+      this.brandForm.get("brand")?.markAsTouched();
       return;
     }
     this.showSpinner = true;

@@ -48,13 +48,13 @@ export class ApiService {
 
   addBrand(model: any): Observable<any> {
     this.myAppUrl = "https://localhost:44310/api";
-    let url = this.myAppUrl + '/Brand/create-brand';
+    let url = this.myAppUrl + '/Brand/add-brand';
     return this.http.post<any>(url, model);
   }
 
   updateBrand(model: any, id: number): Observable<any> {
     this.myAppUrl = "https://localhost:44310/api";
-    let url = this.myAppUrl + '/Brand/update-brand?id=' + id;
+    let url = this.myAppUrl + '/Brand/update_brand?id=' + id;
     return this.http.post<any>(url, model);
   }
 

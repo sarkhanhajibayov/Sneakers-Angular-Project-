@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from  '@angular/material/dialog';
 import { ApiService } from '../services/api.service';
 import { AddBrandComponent } from '../add-brand/add-brand.component';
+import { DeleteBrandComponent } from '../delete-brand/delete-brand.component';
 export interface Brands {
   id: number,
   brand: string,
@@ -48,9 +49,9 @@ export class BrandsComponent implements OnInit {
   }
 
   openDeleteDialog(label:string, id:number){
-    // this.dialog.open(DeleteComponent,{
-    //   data:{label: `${label}`, id: id}
-    // });
+    this.dialog.open(DeleteBrandComponent,{
+      data:{label: `${label}`, id: id}
+    });
   }
 
   get_brands(limit:number, skip:number, isExport:boolean){
