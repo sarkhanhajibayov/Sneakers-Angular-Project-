@@ -1,7 +1,4 @@
-
-
 footer{
-  
     background-color: black;
     padding: 3em 0;
 }
@@ -14,6 +11,7 @@ footer{
 
 footer a:hover {
     color: gray;
+    cursor: pointer;
 }
 .footer-title{
     font-size: 4em;
