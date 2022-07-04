@@ -1,0 +1,12 @@
+.buttons button{
+    background-color: #674b47;
+    color: white;
+}
+
+.buttons button:hover{
+    background-color: #ff0018;
+}
+
+button mat-icon:hover{
+    color: #ff0018;
+}
