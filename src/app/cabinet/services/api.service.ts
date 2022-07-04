@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
 import { Brand } from '../models/brand';
@@ -37,7 +37,7 @@ export class ApiService {
     getBrands(limit: number, skip: number, isExport: boolean): Observable<any> {
       this.myAppUrl = "https://localhost:44310/api";
       let url = this.myAppUrl + `/Brand/get-brands?limit=${limit}&skip=${skip}&isExport=${isExport}`;
-      return this.http.get<any>(url);
+      return this.http.get<any>(url).pipe(catchError (err => of (err) ));
     }
 
     getBrand(id: number): Observable<any> {

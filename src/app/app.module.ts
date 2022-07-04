@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home-components/home.module';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material.module';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import {CabinetModule} from './cabinet/cabinet.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
@@ -20,6 +20,7 @@ import { LayoutModule } from '@angular/cdk/layout'
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ApiService } from './cabinet/services/api.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     SlickCarouselModule
    
   ],
-  providers: [],
+  providers: [ApiService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

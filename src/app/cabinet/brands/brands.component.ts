@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from  '@angular/material/dialog';
-import { Brand } from '../models/brand';
 import { ApiService } from '../services/api.service';
 import { AddBrandComponent } from '../add-brand/add-brand.component';
 export interface Brands {
@@ -56,17 +55,21 @@ export class BrandsComponent implements OnInit {
 
   get_brands(limit:number, skip:number, isExport:boolean){
     this.brandArray=[];
+    console.log('dsa dsa d sad ');
     this.apiService.getBrands(limit,skip,isExport).subscribe(data=>{
+      console.log(data);
       for(let element of data.response.data){
         this.brandArray.push({
           id: element.id,
-          brand: element.brand,
+          brand: element.brand ? element.brand : '',
         })
       }
       this.paginator.length = data.response.total;
       this.dataSource = new MatTableDataSource<Brands>(this.brandArray);
-      this.showSpinner=false;
-    })
+      this.showSpinner=false;  
+      
+    });
+  
   }
 
   
