@@ -75,7 +75,7 @@ export class AddBrandComponent implements OnInit {
         this.showSpinner = false;
       })
     } else {
-      this.apiService.updatePosition(this.brandForm.value, this.id).subscribe(data=>{
+      this.apiService.updateBrand(this.brandForm.value, this.id).subscribe(data=>{
         if (data.errorCode && data.errorCode == 1) {
           this.apiService.messageDialog(data.status.message, false);
         } else {
@@ -83,7 +83,7 @@ export class AddBrandComponent implements OnInit {
         }
         this.showSpinner = false;
       },
-      err => {
+      (err) => {
         this.apiService.messageDialog('Serverdə xəta baş verdi', false);
         this.showSpinner = false;
       })

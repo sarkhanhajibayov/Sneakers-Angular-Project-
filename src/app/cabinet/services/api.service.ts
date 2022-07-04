@@ -52,7 +52,7 @@ export class ApiService {
     return this.http.post<any>(url, model);
   }
 
-  updatePosition(model: any, id: number): Observable<any> {
+  updateBrand(model: any, id: number): Observable<any> {
     this.myAppUrl = "https://localhost:44310/api";
     let url = this.myAppUrl + '/Brand/update-brand?id=' + id;
     return this.http.post<any>(url, model);
