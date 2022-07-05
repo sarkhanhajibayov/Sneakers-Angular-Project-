@@ -58,6 +58,54 @@ export class ApiService {
     return this.http.post<any>(url, model);
   }
 
+  getSizes(limit: number, skip: number, isExport: boolean): Observable<any> {
+    this.myAppUrl = "https://localhost:44310/api";
+    let url = this.myAppUrl + `/Size/get-sizes?limit=${limit}&skip=${skip}&isExport=${isExport}`;
+    return this.http.get<any>(url).pipe(catchError (err => of (err) ));
+  }
+
+  getSize(id: number): Observable<any> {
+    this.myAppUrl = "https://localhost:44310/api";
+    let url = this.myAppUrl + `/Size/get-size?id=${id}`;
+    return this.http.get<any>(url);
+  }
+
+addSize(model: any): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/Size/add-size';
+  return this.http.post<any>(url, model);
+}
+
+updateSize(model: any, id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/Size/update_size?id=' + id;
+  return this.http.post<any>(url, model);
+}
+
+getTypes(limit: number, skip: number, isExport: boolean): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + `/get-types?limit=${limit}&skip=${skip}&isExport=${isExport}`;
+  return this.http.get<any>(url).pipe(catchError (err => of (err) ));
+}
+
+getType(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + `/get-type?id=${id}`;
+  return this.http.get<any>(url);
+}
+
+addType(model: any): Observable<any> {
+this.myAppUrl = "https://localhost:44310/api";
+let url = this.myAppUrl + '/add-type';
+return this.http.post<any>(url, model);
+}
+
+updateType(model: any, id: number): Observable<any> {
+this.myAppUrl = "https://localhost:44310/api";
+let url = this.myAppUrl + '/update_type?id=' + id;
+return this.http.post<any>(url, model);
+}
+
   
  
 

@@ -56,7 +56,6 @@ export class BrandsComponent implements OnInit {
 
   get_brands(limit:number, skip:number, isExport:boolean){
     this.brandArray=[];
-    console.log('dsa dsa d sad ');
     this.apiService.getBrands(limit,skip,isExport).subscribe(data=>{
       console.log(data);
       for(let element of data.response.data){

@@ -19,6 +19,12 @@ import { EditBrandComponent } from './edit-brand/edit-brand.component';
 import { AddBrandComponent } from './add-brand/add-brand.component';
 import { DeleteBrandComponent } from './delete-brand/delete-brand.component';
 import { MessageDialogComponent } from './message-dialog/message-dialog.component';
+import { TypesComponent } from './types/types.component';
+import { AddTypeComponent } from './add-type/add-type.component';
+import { DeleteTypeComponent } from './delete-type/delete-type.component';
+import { SizesComponent } from './sizes/sizes.component';
+import { DeleteSizeComponent } from './delete-size/delete-size.component';
+import { AddSizeComponent } from './add-size/add-size.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,12 @@ import { MessageDialogComponent } from './message-dialog/message-dialog.componen
     AddBrandComponent,
     DeleteBrandComponent,
     MessageDialogComponent,
+    TypesComponent,
+    AddTypeComponent,
+    DeleteTypeComponent,
+    SizesComponent,
+    DeleteSizeComponent,
+    AddSizeComponent,
 
     
   ],
