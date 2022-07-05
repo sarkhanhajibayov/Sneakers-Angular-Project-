@@ -21,7 +21,7 @@ export class BrandsComponent implements OnInit {
   displayedColumns: string[] = ['brand', 'actions'];
   dataSource = new MatTableDataSource<Brands>(this.brandArray);
   showSpinner=true;
-  color = '#E91717';
+  color = '#674b47';
   limit:any=5;
   pageIndex:any=0;
   skip:any=0;

@@ -19,7 +19,7 @@ export class TypesComponent implements OnInit {
   displayedColumns: string[] = ['type', 'actions'];
   dataSource = new MatTableDataSource<Types>(this.typeArray);
   showSpinner=true;
-  color = '#E91717';
+  color = '#674b47';
   limit:any=5;
   pageIndex:any=0;
   skip:any=0;

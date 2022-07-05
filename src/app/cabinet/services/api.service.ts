@@ -83,7 +83,7 @@ updateSize(model: any, id: number): Observable<any> {
 }
 
 getTypes(limit: number, skip: number, isExport: boolean): Observable<any> {
-  this.myAppUrl = "https://localhost:44310/api";
+  this.myAppUrl = "https://localhost:44310";
   let url = this.myAppUrl + `/get-types?limit=${limit}&skip=${skip}&isExport=${isExport}`;
   return this.http.get<any>(url).pipe(catchError (err => of (err) ));
 }

@@ -19,7 +19,7 @@ export class SizesComponent implements OnInit {
   displayedColumns: string[] = ['size', 'actions'];
   dataSource = new MatTableDataSource<Sizes>(this.sizeArray);
   showSpinner=true;
-  color = '#E91717';
+  color = '#674b47';
   limit:any=5;
   pageIndex:any=0;
   skip:any=0;
@@ -52,7 +52,7 @@ export class SizesComponent implements OnInit {
 
   get_sizes(limit:number, skip:number, isExport:boolean){
     this.sizeArray=[];
-    this.apiService.getBrands(limit,skip,isExport).subscribe(data=>{
+    this.apiService.getSizes(limit,skip,isExport).subscribe(data=>{
       console.log(data);
       for(let element of data.response.data){
         this.sizeArray.push({
