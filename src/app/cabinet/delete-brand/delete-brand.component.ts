@@ -14,6 +14,7 @@ export class DeleteBrandComponent implements OnInit {
   data:any;
   label: string;
   id: any;
+
   constructor(@Inject(MAT_DIALOG_DATA)  data: DialogData, public apiService: ApiService) {
     this.data = data;
     this.label = data.label;
@@ -21,13 +22,31 @@ export class DeleteBrandComponent implements OnInit {
   }
 
   deleteFunction(){
-      if (this.data.status.errCode != 0) {
-        this.apiService.messageDialog(this.data.status.message, false);
+    if(this.label == "brand"){
+      this.apiService.deleteBrand(this.id).subscribe(data=>{
+      if (data.status.errCode != 0) {
+        this.apiService.messageDialog(data.status.message, false);
       } else {
-        this.apiService.messageDialog(this.data.status.message, true);
+        this.apiService.messageDialog(data.status.message, true);
       }
-      
-      
+    });
+    } else if (this.label == "type"){
+      this.apiService.deleteType(this.id).subscribe(data=>{
+        if (data.status.errCode != 0) {
+          this.apiService.messageDialog(data.status.message, false);
+        } else {
+          this.apiService.messageDialog(data.status.message, true);
+        }
+      })
+    } else if (this.label == "size"){
+      this.apiService.deleteSize(this.id).subscribe(data=>{
+        if (data.status.errCode != 0) {
+          this.apiService.messageDialog(data.status.message, false);
+        } else {
+          this.apiService.messageDialog(data.status.message, true);
+        }
+      })
+    } 
   }
 
   ngOnInit(): void {

@@ -42,7 +42,9 @@ export class AddBrandComponent implements OnInit {
 
    get_brand(id: any){
     this.showSpinner = true;
-    this.apiService.getBrand(id).subscribe(data => {
+    this.apiService.getBrand(id).subscribe(
+      {
+      next:data => {
       if (data.errorCode && data.errorCode == 1) {
         this.apiService.messageDialog(data.response, false);
         this.showSpinner = false;
@@ -53,10 +55,11 @@ export class AddBrandComponent implements OnInit {
       }
       this.showSpinner = false;
     },
-      err => {
+      error:err => {
         this.apiService.messageDialog('Serverdə xəta baş verdi', false);
         this.showSpinner = false;
-      });
+      }
+    });
   }
 
 
@@ -69,7 +72,9 @@ export class AddBrandComponent implements OnInit {
     this.showSpinner = true;
     if (this.label == "new") {
       this.brandForm.value.brand = this.brandForm.controls['brand'].value.trim();
-      this.apiService.addBrand(this.brandForm.value).subscribe(data=>{
+      this.apiService.addBrand(this.brandForm.value).subscribe(
+        {
+        next:data=>{
         if (data.errorCode && data.errorCode == 1) {
           this.apiService.messageDialog(data.status.message, false);
         } else {
@@ -77,10 +82,12 @@ export class AddBrandComponent implements OnInit {
         }
         this.showSpinner = false;
       },
-      err => {
+      error: err => {
         this.apiService.messageDialog('Serverdə xəta baş verdi', false);
         this.showSpinner = false;
-      })
+      }
+    },
+    );
     } else {
       this.apiService.updateBrand(this.brandForm.value, this.id).subscribe(
         {

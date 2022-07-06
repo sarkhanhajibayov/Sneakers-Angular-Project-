@@ -106,6 +106,22 @@ let url = this.myAppUrl + '/update_type?id=' + id;
 return this.http.post<any>(url, model);
 }
 
+deleteBrand(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/Brand/delete-brand?id=' + id;
+  return this.http.delete<any>(url);
+}
+deleteType(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/delete-type?id=' + id;
+  return this.http.delete<any>(url);
+}
+deleteSize(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/Size/delete-size?id=' + id;
+  return this.http.delete<any>(url);
+}
+
   
  
 
