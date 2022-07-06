@@ -13,6 +13,7 @@ import { BrandsComponent } from './cabinet/brands/brands.component';
 import { TypesComponent } from './cabinet/types/types.component';
 import { SizesComponent } from './cabinet/sizes/sizes.component';
 import { EmployeeComponent } from './cabinet/employee/employee.component';
+import { SneakersComponent } from './cabinet/sneakers/sneakers.component';
 const routes: Routes = [
   
   HomeModule.childRoutes([
@@ -36,6 +37,7 @@ const routes: Routes = [
    {path: 'types' , component: TypesComponent},
    {path: 'sizes' , component: SizesComponent},
    {path: 'employee' , component: EmployeeComponent},
+   {path: 'sneakers' , component: SneakersComponent},
 
  ]),
 ];

@@ -2,8 +2,8 @@ import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
+import {Router} from '@angular/router'
 import { environment } from 'src/environments/environment';
 import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
 import { Brand } from '../models/brand';
