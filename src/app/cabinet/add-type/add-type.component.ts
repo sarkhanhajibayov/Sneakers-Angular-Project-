@@ -17,6 +17,9 @@ export class AddTypeComponent implements OnInit {
   id: any;
   typeForm: FormGroup;
   showSpinner = false;
+
+
+
   constructor(@Inject(MAT_DIALOG_DATA) data: DialogData, private fb: FormBuilder, public apiService: ApiService, private dialog: MatDialog) {
     this.data = data;
     this.typeForm = this.fb.group({});
@@ -40,7 +43,7 @@ export class AddTypeComponent implements OnInit {
         this.showSpinner = false;
       } else {
         this.typeForm = this.fb.group({
-          type: [data.response.name, [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]],
+          type: [data.response.type, [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]],
         });
       }
       this.showSpinner = false;
@@ -76,8 +79,8 @@ export class AddTypeComponent implements OnInit {
         this.showSpinner = false;
       }
     },
-    )
-    } else {
+    );
+    }  else {
       this.apiService.updateType(this.typeForm.value, this.id).subscribe(
         {
         next:data=>{
@@ -88,12 +91,12 @@ export class AddTypeComponent implements OnInit {
         }
         this.showSpinner = false;
       },
-      error:(err) => {
+      error:  (err) => {
         this.apiService.messageDialog('Serverdə xəta baş verdi', false);
         this.showSpinner = false;
       }
     },
-    )
+     )
     }
   }
 

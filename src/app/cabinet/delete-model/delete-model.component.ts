@@ -6,23 +6,23 @@ export interface DialogData {
   id: any
 }
 @Component({
-  selector: 'app-delete-type',
-  templateUrl: './delete-type.component.html',
-  styleUrls: ['./delete-type.component.css']
+  selector: 'app-delete-model',
+  templateUrl: './delete-model.component.html',
+  styleUrls: ['./delete-model.component.css']
 })
-export class DeleteTypeComponent implements OnInit {
+export class DeleteModelComponent implements OnInit {
   data:any;
   label: string;
   id: any;
-  constructor(@Inject(MAT_DIALOG_DATA)  data: DialogData, public apiService: ApiService) { 
+  constructor(@Inject(MAT_DIALOG_DATA)  data: DialogData, public apiService: ApiService) {
     this.data = data;
     this.label = data.label;
     this.id = data.id;
-  }
+   }
 
-  deleteFunction(){
-    if(this.label == "type"){
-      this.apiService.deleteType(this.id).subscribe(data=>{
+   deleteFunction(){
+    if(this.label == "model"){
+      this.apiService.deleteModel(this.id).subscribe(data=>{
       if (data.status.errCode != 0) {
         this.apiService.messageDialog(data.status.message, false);
       } else {

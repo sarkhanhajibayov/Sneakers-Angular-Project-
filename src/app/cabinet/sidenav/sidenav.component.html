@@ -90,9 +90,9 @@
 
   <mat-drawer-container   class="example-container mat-typography" autosize>
     
-      <mat-drawer   #drawer mode="side" disableClose="true" opened="false">
+      <mat-drawer   #drawer mode="side" disableClose="true" opened="true">
         <mat-nav-list >
-          <a class="mt-2" mat-list-item [routerLink]="['/dashboard']">
+          <!-- <a class="mt-2" mat-list-item [routerLink]="['/dashboard']">
               <mat-icon>dashboard</mat-icon>
               <span mat-line  class="pl-2" >Dashboard</span>
           </a>
@@ -100,7 +100,7 @@
               <mat-icon>store</mat-icon>
               <span mat-line  class="pl-2" >Warehouse</span>
               
-          </a> 
+          </a>  -->
 
           <a class="mt-2" mat-list-item [routerLink]="['/brands']">
             <mat-icon>loyalty</mat-icon>
@@ -118,13 +118,18 @@
             <span mat-line  class="pl-2" >Sizes</span>
           </a> 
 
-          <a class="mt-2" mat-list-item [routerLink]="['/employee']">
-            <mat-icon>supervised_user_circle</mat-icon>
-            <span mat-line  class="pl-2" >Employees</span>
+          <a class="mt-2" mat-list-item [routerLink]="['/models']">
+            <mat-icon>style</mat-icon>
+            <span mat-line  class="pl-2">Models</span>
           </a> 
 
+          <!-- <a class="mt-2" mat-list-item [routerLink]="['/employee']">
+            <mat-icon>supervised_user_circle</mat-icon>
+            <span mat-line  class="pl-2" >Employees</span>
+          </a>  -->
+
           <a class="mt-2 custom-icon" mat-list-item [routerLink]="['/sneakers']">
-            <img src="https://cdn-icons-png.flaticon.com/512/2590/2590028.png">
+            <mat-icon>store</mat-icon>
             <span mat-line  class="pl-2" >Sneakers</span>
           </a> 
       </mat-nav-list>

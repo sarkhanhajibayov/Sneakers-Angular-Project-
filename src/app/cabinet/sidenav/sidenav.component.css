@@ -36,6 +36,9 @@ mat-toolbar {
   mat-toolbar-row a:hover mat-icon{
     color: #ff0018 !important;
   }
+  mat-toolbar-row a:hover img{
+    color: #ff0018 !important;
+  }
    
   mat-toolbar-row a{
     text-decoration: none;
@@ -244,6 +247,10 @@ mat-toolbar {
   .custom-icon{
     padding: 0 18px 0 16px ;
   }
+
+  mat-dialog-container{
+    width: 50%;
+}
 
   @media (max-width:768px){
     .toolbar-text{

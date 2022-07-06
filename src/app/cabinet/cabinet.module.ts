@@ -26,6 +26,9 @@ import { SizesComponent } from './sizes/sizes.component';
 import { DeleteSizeComponent } from './delete-size/delete-size.component';
 import { AddSizeComponent } from './add-size/add-size.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { ModelsComponent } from './models/models.component';
+import { AddModelComponent } from './add-model/add-model.component';
+import { DeleteModelComponent } from './delete-model/delete-model.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { EmployeeComponent } from './employee/employee.component';
     DeleteSizeComponent,
     AddSizeComponent,
     EmployeeComponent,
+    ModelsComponent,
+    AddModelComponent,
+    DeleteModelComponent,
 
     
   ],

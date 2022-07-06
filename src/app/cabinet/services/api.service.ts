@@ -106,19 +106,49 @@ let url = this.myAppUrl + '/update_type?id=' + id;
 return this.http.post<any>(url, model);
 }
 
+getModels(limit: number, skip: number, isExport: boolean): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+  let url = this.myAppUrl + `/get-models?limit=${limit}&skip=${skip}&isExport=${isExport}`;
+  return this.http.get<any>(url).pipe(catchError (err => of (err) ));
+}
+
+getModel(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+  let url = this.myAppUrl + `/get-model?id=${id}`;
+  return this.http.get<any>(url);
+}
+
+addModel(model: any): Observable<any> {
+this.myAppUrl = "https://localhost:44310";
+let url = this.myAppUrl + '/add-model';
+return this.http.post<any>(url, model);
+}
+
+updateModel(model: any, id: number): Observable<any> {
+this.myAppUrl = "https://localhost:44310";
+let url = this.myAppUrl + '/update_model?id=' + id;
+return this.http.post<any>(url, model);
+}
+
 deleteBrand(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310/api";
-  let url = this.myAppUrl + '/Brand/delete-brand?id=' + id;
+  let url = this.myAppUrl + '/Brand/delete_brand?id=' + id;
   return this.http.delete<any>(url);
 }
 deleteType(id: number): Observable<any> {
-  this.myAppUrl = "https://localhost:44310/api";
-  let url = this.myAppUrl + '/delete-type?id=' + id;
+  this.myAppUrl = "https://localhost:44310";
+  let url = this.myAppUrl + '/delete_type?id=' + id;
   return this.http.delete<any>(url);
 }
 deleteSize(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310/api";
-  let url = this.myAppUrl + '/Size/delete-size?id=' + id;
+  let url = this.myAppUrl + '/Size/delete_size?id=' + id;
+  return this.http.delete<any>(url);
+}
+
+deleteModel(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+  let url = this.myAppUrl + '/delete_model?id=' + id;
   return this.http.delete<any>(url);
 }
 

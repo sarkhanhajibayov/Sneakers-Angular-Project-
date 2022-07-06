@@ -1,27 +1,27 @@
-<form [formGroup]="sizeForm">
+<form [formGroup]="modelForm">
     <div class="new-position row">
         <div class="col-12 d-flex justify-content-between align-items-center mb-3">
             <h1 class="tc-label m-0">
-                Yeni Ölçü
+                Yeni Model
             </h1>
             <button mat-icon-button mat-dialog-close >
       <mat-icon>close</mat-icon>
       </button>
         </div>
-        <div class="col-12 text-center" *ngIf="sizeForm.controls['size']">
-            <span class="form-label pr-4">Ölçü:</span>
+        <div class="col-12 text-center" *ngIf="modelForm.controls['model']">
+            <span class="form-label pr-4">Model:</span>
             <mat-form-field class="example-full-width" appearance="fill">
-                <input matInput type="text" formControlName="size">
+                <input matInput type="text" formControlName="model">
             </mat-form-field>
-            <div class="row col-12 justify-content-center" *ngIf="sizeForm.controls['size'].invalid && (sizeForm.controls['size'].dirty || sizeForm.controls['size'].touched )">
-                <div class="text-danger" *ngIf="sizeForm.controls['size'].errors">
+            <div class="row col-12 justify-content-center" *ngIf="modelForm.controls['model'].invalid && (modelForm.controls['model'].dirty || modelForm.controls['model'].touched )">
+                <div class="text-danger" *ngIf="modelForm.controls['model'].errors">
                     Ad boş ola bilməz.
                 </div>
             </div>
         </div>
         <div *ngIf="!showSpinner" class="col-12 d-flex justify-content-end  align-items-lg-end align-items-center buttons" style="padding-bottom:10px; padding-top:10px">
-            <button *ngIf="label=='new'" mat-button class="filter-btn" (click)="add_size()" [disabled]="showSpinner">Əlavə et</button>
-            <button *ngIf="label=='update'" mat-button class="filter-btn" (click)="add_size()" [disabled]="showSpinner">Yadda saxla</button>
+            <button *ngIf="label=='new'" mat-button class="filter-btn" (click)="add_model()" [disabled]="showSpinner">Əlavə et</button>
+            <button *ngIf="label=='update'" mat-button class="filter-btn" (click)="add_model()" [disabled]="showSpinner">Yadda saxla</button>
         </div>
         <div class="row col-lg-6 col-12 d-flex justify-content-lg-end justify-content-center align-items-lg-end align-items-center spinner-div" style="padding-bottom:10px; padding-top:10px" *ngIf="showSpinner">
             <button [disabled]="true" mat-button class="filter-btn">

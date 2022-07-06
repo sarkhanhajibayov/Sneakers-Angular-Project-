@@ -30,23 +30,7 @@ export class DeleteBrandComponent implements OnInit {
         this.apiService.messageDialog(data.status.message, true);
       }
     });
-    } else if (this.label == "type"){
-      this.apiService.deleteType(this.id).subscribe(data=>{
-        if (data.status.errCode != 0) {
-          this.apiService.messageDialog(data.status.message, false);
-        } else {
-          this.apiService.messageDialog(data.status.message, true);
-        }
-      })
-    } else if (this.label == "size"){
-      this.apiService.deleteSize(this.id).subscribe(data=>{
-        if (data.status.errCode != 0) {
-          this.apiService.messageDialog(data.status.message, false);
-        } else {
-          this.apiService.messageDialog(data.status.message, true);
-        }
-      })
-    } 
+    }
   }
 
   ngOnInit(): void {

@@ -21,14 +21,16 @@ export class DeleteSizeComponent implements OnInit {
   }
 
   deleteFunction(){
-    if (this.data.status.errCode != 0) {
-      this.apiService.messageDialog(this.data.status.message, false);
-    } else {
-      this.apiService.messageDialog(this.data.status.message, true);
+    if(this.label == "size"){
+      this.apiService.deleteSize(this.id).subscribe(data=>{
+      if (data.status.errCode != 0) {
+        this.apiService.messageDialog(data.status.message, false);
+      } else {
+        this.apiService.messageDialog(data.status.message, true);
+      }
+    });
     }
-    
-    
-}
+  }
 
   ngOnInit(): void {
   }
