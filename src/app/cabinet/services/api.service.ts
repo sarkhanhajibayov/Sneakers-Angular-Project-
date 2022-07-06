@@ -89,19 +89,19 @@ getTypes(limit: number, skip: number, isExport: boolean): Observable<any> {
 }
 
 getType(id: number): Observable<any> {
-  this.myAppUrl = "https://localhost:44310/api";
+  this.myAppUrl = "https://localhost:44310";
   let url = this.myAppUrl + `/get-type?id=${id}`;
   return this.http.get<any>(url);
 }
 
 addType(model: any): Observable<any> {
-this.myAppUrl = "https://localhost:44310/api";
+this.myAppUrl = "https://localhost:44310";
 let url = this.myAppUrl + '/add-type';
 return this.http.post<any>(url, model);
 }
 
 updateType(model: any, id: number): Observable<any> {
-this.myAppUrl = "https://localhost:44310/api";
+this.myAppUrl = "https://localhost:44310";
 let url = this.myAppUrl + '/update_type?id=' + id;
 return this.http.post<any>(url, model);
 }
