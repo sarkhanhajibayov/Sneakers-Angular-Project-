@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {faRuler} from '@fortawesome/free-solid-svg-icons'
 
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',

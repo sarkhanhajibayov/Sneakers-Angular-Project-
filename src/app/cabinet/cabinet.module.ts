@@ -25,6 +25,7 @@ import { DeleteTypeComponent } from './delete-type/delete-type.component';
 import { SizesComponent } from './sizes/sizes.component';
 import { DeleteSizeComponent } from './delete-size/delete-size.component';
 import { AddSizeComponent } from './add-size/add-size.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddSizeComponent } from './add-size/add-size.component';
     SizesComponent,
     DeleteSizeComponent,
     AddSizeComponent,
+    EmployeeComponent,
 
     
   ],
