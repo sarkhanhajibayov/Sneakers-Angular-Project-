@@ -8,6 +8,7 @@ export interface DialogData {
   label: string,
   id: any
 }
+
 @Component({
   selector: 'app-add-brand',
   templateUrl: './add-brand.component.html',
@@ -19,6 +20,8 @@ export class AddBrandComponent implements OnInit {
   id: any;
   brandForm: FormGroup;
   showSpinner = false;
+
+
   constructor(@Inject(MAT_DIALOG_DATA) data: DialogData, private fb: FormBuilder, public apiService: ApiService, private dialog: MatDialog) { 
   this.data = data;
   this.brandForm = this.fb.group({});
@@ -28,12 +31,12 @@ export class AddBrandComponent implements OnInit {
     if (this.label == "new"){
       this.brandForm = this.fb.group({
         brand: ['',[Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]],
-        key : ['', [Validators.required, Validators.pattern(/^(\s+\S+\s*)*(?!\s).*$/)]]
       });
     } else {
         this.get_brand(this.id);
     }
    }
+   
 
    get_brand(id: any){
     this.showSpinner = true;
@@ -53,6 +56,9 @@ export class AddBrandComponent implements OnInit {
         this.showSpinner = false;
       });
   }
+
+
+  
   add_brand(){
     if (this.brandForm.invalid) {
       this.brandForm.get("brand")?.markAsTouched();
