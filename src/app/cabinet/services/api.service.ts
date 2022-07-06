@@ -108,7 +108,7 @@ return this.http.post<any>(url, model);
 
 deleteBrand(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310/api";
-  let url = this.myAppUrl + '/Brand/delete-brand?id=' + id;
+  let url = this.myAppUrl + '/Brand/delete_brand?id=' + id;
   return this.http.delete<any>(url);
 }
 deleteType(id: number): Observable<any> {
@@ -118,7 +118,7 @@ deleteType(id: number): Observable<any> {
 }
 deleteSize(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310/api";
-  let url = this.myAppUrl + '/Size/delete-size?id=' + id;
+  let url = this.myAppUrl + '/Size/delete_size?id=' + id;
   return this.http.delete<any>(url);
 }
 
