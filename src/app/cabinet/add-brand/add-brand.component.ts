@@ -14,6 +14,8 @@ export interface DialogData {
   templateUrl: './add-brand.component.html',
   styleUrls: ['./add-brand.component.css']
 })
+
+
 export class AddBrandComponent implements OnInit {
   data: any;
   label: string;
@@ -80,7 +82,9 @@ export class AddBrandComponent implements OnInit {
         this.showSpinner = false;
       })
     } else {
-      this.apiService.updateBrand(this.brandForm.value, this.id).subscribe(data=>{
+      this.apiService.updateBrand(this.brandForm.value, this.id).subscribe(
+        {
+        next:data=>{
         if (data.errorCode && data.errorCode == 1) {
           this.apiService.messageDialog(data.status.message, false);
         } else {
@@ -88,10 +92,12 @@ export class AddBrandComponent implements OnInit {
         }
         this.showSpinner = false;
       },
-      (err) => {
+      error:  (err) => {
         this.apiService.messageDialog('Serverdə xəta baş verdi', false);
         this.showSpinner = false;
-      })
+      }
+    },
+     )
     }
   }
   

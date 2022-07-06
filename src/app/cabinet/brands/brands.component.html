@@ -7,9 +7,6 @@
   </div>
   <div class="mat-elevation-z8" [ngClass]="{'d-none':showSpinner}">
       <table mat-table [dataSource]="dataSource" class="" *ngIf="brandArray?.length">
-          <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-          <!-- Name Column -->
           <ng-container matColumnDef="brand">
               <th mat-header-cell *matHeaderCellDef [style.background-color]="color" class="sd">
                   Brend
