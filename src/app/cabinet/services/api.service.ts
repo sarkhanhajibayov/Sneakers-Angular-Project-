@@ -143,12 +143,14 @@ deleteType(id: number): Observable<any> {
 deleteSize(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310/api";
   let url = this.myAppUrl + '/Size/delete_size?id=' + id;
+
   return this.http.delete<any>(url);
 }
 
 deleteModel(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310";
   let url = this.myAppUrl + '/delete_model?id=' + id;
+
   return this.http.delete<any>(url);
 }
 
