@@ -182,13 +182,4 @@ getSneakers(
     `/get-sneakers?limit=${limit}&skip=${skip}&isExport=${isExport}`;
   return this.http.post<any>(url, model);
 }
-
-  
- 
-
- 
-
-
-
-
 }
