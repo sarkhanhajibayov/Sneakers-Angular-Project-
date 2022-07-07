@@ -29,6 +29,8 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ModelsComponent } from './models/models.component';
 import { AddModelComponent } from './add-model/add-model.component';
 import { DeleteModelComponent } from './delete-model/delete-model.component';
+import { MatMenuModule} from '@angular/material/menu';
+import { SneakersComponent } from './sneakers/sneakers.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { DeleteModelComponent } from './delete-model/delete-model.component';
     ModelsComponent,
     AddModelComponent,
     DeleteModelComponent,
+    SneakersComponent
 
     
   ],
@@ -71,6 +74,7 @@ import { DeleteModelComponent } from './delete-model/delete-model.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    MatMenuModule
   ],
   providers: [
    

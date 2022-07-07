@@ -37,9 +37,8 @@ const routes: Routes = [
    {path: 'brands' , component: BrandsComponent},
    {path: 'types' , component: TypesComponent},
    {path: 'sizes' , component: SizesComponent},
-   {path: 'employee' , component: EmployeeComponent},
-   {path: 'sneakers' , component: SneakersComponent},
    {path: 'models' , component: ModelsComponent},
+   {path: 'sneakers' , component: SneakersComponent}
  ]),
 ];
 

@@ -6,7 +6,6 @@ import { catchError, Observable, of } from 'rxjs';
 import {Router} from '@angular/router'
 import { environment } from 'src/environments/environment';
 import { MessageDialogComponent } from '../message-dialog/message-dialog.component';
-import { Brand } from '../models/brand';
 
 @Injectable({
   providedIn: 'root'
@@ -152,6 +151,36 @@ deleteModel(id: number): Observable<any> {
   let url = this.myAppUrl + '/delete_model?id=' + id;
 
   return this.http.delete<any>(url);
+}
+
+getModelss(): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/lookup/models';
+  return this.http.get<any>(url).pipe(catchError (err => of (err) ));
+}
+
+getBrandss(): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/lookup/brands';
+  return this.http.get<any>(url).pipe(catchError (err => of (err) ));
+}
+
+getTypess(): Observable<any> {
+  this.myAppUrl = "https://localhost:44310/api";
+  let url = this.myAppUrl + '/lookup/types';
+  return this.http.get<any>(url).pipe(catchError (err => of (err) ));
+}
+
+getSneakers(
+  model: any,
+  limit: number,
+  skip: number,
+  isExport: boolean
+): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";  let url =
+    this.myAppUrl +
+    `/get-sneakers?limit=${limit}&skip=${skip}&isExport=${isExport}`;
+  return this.http.post<any>(url, model);
 }
 
   
