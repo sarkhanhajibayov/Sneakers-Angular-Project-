@@ -1,1 +1,79 @@
-<p>add-sneakers works!</p>
+<form [formGroup]="sneakerForm">
+    <div class="new-customer row" [ngClass]="showAddSneakerModal ? 'active': ''">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+            <h1 class="tc-label" *ngIf="label=='new'">
+                Yeni Məzuniyyət
+            </h1>
+            <h1 class="tc-label" *ngIf="label=='update'">
+                Məzuniyyəti Düzənlə
+            </h1>
+            <button mat-dialog-close mat-icon-button color="primary">
+              <mat-icon>close</mat-icon>
+              </button>
+        </div>
+        <div class="col-12" *ngIf="sneakerForm.controls['brandId']">
+            <span class="form-label">Brend:</span>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-select class="customer-component" formControlName="brandId" placeholder="Seçin">
+                    <mat-option value=0>Seçin</mat-option>
+                    <mat-option *ngFor="let brand of brandArray" [value]="brand.id">
+                        {{brand.brand}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="row col-12 justify-content-center" *ngIf="sneakerForm.controls['brandId'].invalid && (sneakerForm.controls['brandId'].dirty || sneakerForm.controls['brandId'].touched)">
+                <div class="text-danger" *ngIf="sneakerForm.controls['brandId'].errors?.['required']">
+                    Brend boş ola bilməz.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12" *ngIf="sneakerForm.controls['modelId']">
+            <span class="form-label">Model:</span>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-select class="customer-component" formControlName="brandId" placeholder="Seçin">
+                    <mat-option value=0>Seçin</mat-option>
+                    <mat-option *ngFor="let model of modelArray" [value]="model.id">
+                        {{model.model}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="row col-12 justify-content-center" *ngIf="sneakerForm.controls['modelId'].invalid && (sneakerForm.controls['modelId'].dirty || sneakerForm.controls['modelId'].touched)">
+                <div class="text-danger" *ngIf="sneakerForm.controls['modelId'].errors?.['required']">
+                    Brend boş ola bilməz.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-12" *ngIf="sneakerForm.controls['typeId']">
+            <span class="form-label">Tip:</span>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-select class="customer-component" formControlName="typeId" placeholder="Seçin">
+                    <mat-option value=0>Seçin</mat-option>
+                    <mat-option *ngFor="let type of typeArray" [value]="type.id">
+                        {{type.type}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="row col-12 justify-content-center" *ngIf="sneakerForm.controls['typeId'].invalid && (sneakerForm.controls['typeId'].dirty || sneakerForm.controls['typeId'].touched)">
+                <div class="text-danger" *ngIf="sneakerForm.controls['typeId'].errors?.['required']">
+                    Brend boş ola bilməz.
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="!showSpinner" class="col-12 d-flex justify-content-lg-end justify-content-center align-items-lg-end align-items-center" style="padding-bottom:10px; padding-top:10px">
+            <button *ngIf="label=='new'" mat-button class="filter-btn" (click)="add_sneaker()" [disabled]="showSpinner">Əlavə et</button>
+            <button *ngIf="label=='update'" mat-button class="filter-btn" (click)="add_sneaker()" [disabled]="showSpinner">Yadda saxla</button>
+        </div>
+        <div class="row col-12 d-flex justify-content-lg-end justify-content-center align-items-lg-end align-items-center spinner-div" style="padding-bottom:10px; padding-top:10px" *ngIf="showSpinner">
+            <button [disabled]="true" mat-button class="filter-btn">
+            Əlavə et
+        </button>
+            <mat-spinner style="margin:7px;" [diameter]="40" class="spinner">
+            </mat-spinner>
+        </div>
+    </div>
+</form>

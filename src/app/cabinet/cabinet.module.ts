@@ -31,7 +31,7 @@ import { AddModelComponent } from './add-model/add-model.component';
 import { DeleteModelComponent } from './delete-model/delete-model.component';
 import { MatMenuModule} from '@angular/material/menu';
 import { SneakersComponent } from './sneakers/sneakers.component';
-
+import { AddSneakersComponent } from './add-sneakers/add-sneakers.component';
 @NgModule({
   declarations: [
    
@@ -56,7 +56,8 @@ import { SneakersComponent } from './sneakers/sneakers.component';
     ModelsComponent,
     AddModelComponent,
     DeleteModelComponent,
-    SneakersComponent
+    SneakersComponent,
+    AddSneakersComponent
 
     
   ],

@@ -171,15 +171,37 @@ getTypess(): Observable<any> {
   return this.http.get<any>(url).pipe(catchError (err => of (err) ));
 }
 
+addSneaker(model: any): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+  let url =this.myAppUrl +`/add-sneakers`;
+  return this.http.post<any>(url, model);
+}
+
+updateSneaker(model: any, id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+  let url = this.myAppUrl + '/update_sneaker?id=' + id;
+  return this.http.post<any>(url, model);
+}
+deleteSneaker(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+  let url =this.myAppUrl +`/delete_sneaker?id=` + id;
+  return this.http.delete<any>(url);
+}
+
+getSneaker(id: number): Observable<any> {
+  this.myAppUrl = "https://localhost:44310";
+let url = this.myAppUrl + '/get-sneaker?id=' + id;
+  return this.http.get<any>(url);
+}
+
 getSneakers(
   model: any,
   limit: number,
   skip: number,
   isExport: boolean
 ): Observable<any> {
-  this.myAppUrl = "https://localhost:44310";  let url =
-    this.myAppUrl +
-    `/get-sneakers?limit=${limit}&skip=${skip}&isExport=${isExport}`;
+  this.myAppUrl = "https://localhost:44310";
+  let url =this.myAppUrl +`/get-sneakers?limit=${limit}&skip=${skip}&isExport=${isExport}`;
   return this.http.post<any>(url, model);
 }
 }

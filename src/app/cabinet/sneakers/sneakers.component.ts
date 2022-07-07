@@ -45,7 +45,6 @@ export class SneakersComponent implements OnInit {
   skip: any = 0;
 
   filterForm: FormGroup = this.fb.group({
-    employee: null,
     brandId: 0,
     typeId:0,
     modelId:0
@@ -90,13 +89,13 @@ export class SneakersComponent implements OnInit {
       this.get_Brand();  //?
       this.get_Model();  //?
       this.get_Type();  //?
-      this.get_sneakers({ "brand": this.filterForm.controls['brand'].value, "model": this.filterForm.controls['model'].value, "type": this.filterForm.controls['type'].value}, 5, 0, false);
+      this.get_sneakers({ "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "typeId": this.filterForm.controls['typeId'].value}, 5, 0, false);
   }
 
   filter_sneakers() {
     this.showSpinner = true;
-    this.get_sneakers({ "brand": this.filterForm.controls['brand'].value, "model": this.filterForm.controls['model'].value, "type": this.filterForm.controls['type'].value }, this.limit, this.skip, false);
-    console.log({  "brand": this.filterForm.controls['brand'].value, "model": this.filterForm.controls['model'].value, "type": this.filterForm.controls['type'].value  })
+    this.get_sneakers({ "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "typeId": this.filterForm.controls['typeId'].value }, this.limit, this.skip, false);
+    console.log({  "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "type": this.filterForm.controls['typeId'].value  })
 
     // this.get_vacations({ "employee": this.filterForm.controls.employee.value, "startDate": this.range.controls.startDate.value, "endDate": this.range.controls.endDate.value, "vacationReasonId": this.filterForm.controls.vacationReasonId.value }, this.limit, this.skip, false);
   }
