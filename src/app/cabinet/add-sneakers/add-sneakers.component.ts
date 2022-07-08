@@ -51,6 +51,7 @@ export class AddSneakersComponent implements OnInit {
         brandId: ['', Validators.required],
         modelId: ['',Validators.required],
         typeId: ['',Validators.required],
+        price: [0,Validators.required],
       });
     } else {
       this.get_sneakers(this.id);
@@ -95,7 +96,7 @@ export class AddSneakersComponent implements OnInit {
           this.showSpinner = false;
         }
       });
-    } else {}
+    } else {
       this.apiService.updateSneaker(this.sneakerForm.value, this.id).subscribe({
         next:data => {
 
@@ -112,6 +113,8 @@ export class AddSneakersComponent implements OnInit {
           this.showSpinner = false;
         }
       });
+    }
+    
 
     }
     get_sneakers(id:any){
