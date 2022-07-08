@@ -10,9 +10,9 @@ import { ApiService } from '../services/api.service';
 
 export interface Sneaker {
   id: number;
-  brand: string;
-  model: string;
-  type: string;
+  brandId: string;
+  modelId: string;
+  typeId: string;
   price: string;
 }
 
@@ -128,9 +128,9 @@ export class SneakersComponent implements OnInit {
         for (let element of data.response.data) {
           this.sneakersArray.push({
             id: element.id,
-            brand: element.brand,
-            model: element.model,
-            type: element.type,
+            brandId: element.brand,
+            modelId: element.model,
+            typeId: element.type,
             price: element.price
           });
         }
