@@ -120,7 +120,7 @@ export class SneakersComponent implements OnInit {
     this.sneakersArray = [];
     this.apiService
       .getSneakers(
-        { "brand": filterModel.brand, "model": filterModel.model, "type": filterModel.type },
+        { "brandId": filterModel.brandId, "modelId": filterModel.modelId, "typeId": filterModel.typeId },
         limit, skip, isExport
       )
       .subscribe((data) => {

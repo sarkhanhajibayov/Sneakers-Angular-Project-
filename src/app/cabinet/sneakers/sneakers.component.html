@@ -12,31 +12,43 @@
   <div
     class="customer-filter-pane row mb-3 px-5 py-4 align-items-center"
     [formGroup]="filterForm"> 
-       <div class="col-lg-4 col-12 d-flex flex-column">
-      <span class="form-label">Brendlər</span>
+    <div class="col-lg-3 col-12 d-flex flex-column" >
+      <span class="form-label">Brendler</span>
       <mat-form-field appearance="fill">
-        <div class="filter-brand">
-          <input matInput #input class="dd" formControlName="brand"/>
-        </div>
+        <mat-select class="customer-component" formControlName="brandId"
+        placeholder="Seçin">
+          <mat-option value="0">Seçin</mat-option>
+          <mat-option *ngFor="let brandId of BrandArray" [value]="brandId.id">
+            {{brandId.brand}}
+        </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
-    <div class="col-lg-4 col-12 d-flex flex-column">
-        <span class="form-label">Tiplər</span>
-        <mat-form-field appearance="fill">
-          <div class="filter-type">
-            <input matInput #input class="dd" formControlName="type"/>
-          </div>
-        </mat-form-field>
-      </div>
+    <div class="col-lg-3 col-12 d-flex flex-column" >
+      <span class="form-label">Modeller</span>
+      <mat-form-field appearance="fill">
+        <mat-select class="customer-component" formControlName="modelId"
+        placeholder="Seçin">
+          <mat-option value="0">Seçin</mat-option>
+          <mat-option *ngFor="let ModelId of ModelArray" [value]="ModelId.id">
+            {{ModelId.model}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-      <div class="col-lg-4 col-12 d-flex flex-column">
-        <span class="form-label">Modellər</span>
-        <mat-form-field appearance="fill">
-          <div class="filter-model">
-            <input matInput #input class="dd" formControlName="model"/>
-          </div>
-        </mat-form-field>
-      </div>
+    <div class="col-lg-3 col-12 d-flex flex-column" >
+      <span class="form-label">Tipler</span>
+      <mat-form-field appearance="fill">
+        <mat-select class="customer-component" formControlName="typeId"
+        placeholder="Seçin">
+          <mat-option value="0">Seçin</mat-option>
+          <mat-option *ngFor="let TypeId of TypeArray" [value]="TypeId.id">
+            {{TypeId.type}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="col-lg-2 col-12 pt-2 d-flex justify-content-center">
       <button mat-button class="filter-btn" (click)="filter_sneakers()">Filterlə</button>
     </div>
