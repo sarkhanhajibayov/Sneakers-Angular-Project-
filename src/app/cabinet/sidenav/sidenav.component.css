@@ -96,7 +96,7 @@ mat-toolbar {
   .settings,.profile,.log-out,.status{
     display: flex;
     align-items: center;
-    padding: 1em;
+    padding: 1em 0;
     cursor: pointer;
   }
 

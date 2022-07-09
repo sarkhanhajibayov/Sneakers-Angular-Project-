@@ -77,6 +77,7 @@ export class AddSneakersComponent implements OnInit {
       this.sneakerForm.get("brandId")?.markAsTouched();
       this.sneakerForm.get("modelId")?.markAsTouched();
       this.sneakerForm.get("typeId")?.markAsTouched();
+      this.sneakerForm.get("price")?.markAsTouched();
       return;
     }
     this.showSpinner = true;
@@ -108,7 +109,7 @@ export class AddSneakersComponent implements OnInit {
         }
         this.showSpinner = false;
       },
-        error:err => {
+        error:(err) => {
           this.apiService.messageDialog('Serverdə xəta baş verdi', false);
           this.showSpinner = false;
         }
@@ -128,8 +129,8 @@ export class AddSneakersComponent implements OnInit {
           this.sneakerForm = this.fb.group({
             brandId: [data.response.brandId],
             modelId: [data.response.modelId],
-            typeId: [data.response.brandId]
-  
+            typeId: [data.response.typeId],
+            price: [data.response.price]
             // startDate: [data.response.startDate],
             // endDate: [data.response.endDate]
   

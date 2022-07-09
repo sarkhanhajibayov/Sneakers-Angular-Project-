@@ -38,7 +38,7 @@ export class SneakersComponent implements OnInit {
   BrandArray: BrandId[] = [];
   ModelArray: ModelId[] = [];
   TypeArray: TypeId[] = [];
-  color = '#E91717';
+  color = '#674b47';
 
   limit: any = 5;
   pageIndex: any = 0;

@@ -1,21 +1,21 @@
 <div class="container-fluid px-4"  style="padding-bottom: 100px">
-  <div class="d-flex justify-content-between align-items-center">
-    <h1 class="tc-label">Ayaqqabılar</h1>
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <h1 class="tc-label m-0">Ayaqqabılar</h1>
     <button
       mat-button
-      class="new-btn clck-new-customer"
+      class="new-btn clck-new-sneaker p-0"
       (click)="openDialog('new', null)"
     >
       <i class="fas fa-plus p-1"></i>Yeni ayaqqabı
     </button>
   </div>
   <div
-    class="customer-filter-pane row mb-3 px-5 py-4 align-items-center"
+    class="sneaker-filter-pane row mb-3 px-5 py-4 align-items-center"
     [formGroup]="filterForm"> 
     <div class="col-lg-3 col-12 d-flex flex-column" >
-      <span class="form-label">Brendler</span>
+      <span class="form-label">Brend</span>
       <mat-form-field appearance="fill">
-        <mat-select class="customer-component" formControlName="brandId"
+        <mat-select class="sneaker-component" formControlName="brandId"
         placeholder="Seçin">
           <mat-option value="0">Seçin</mat-option>
           <mat-option *ngFor="let brandId of BrandArray" [value]="brandId.id">
@@ -25,9 +25,9 @@
       </mat-form-field>
     </div>
     <div class="col-lg-3 col-12 d-flex flex-column" >
-      <span class="form-label">Modeller</span>
+      <span class="form-label">Model</span>
       <mat-form-field appearance="fill">
-        <mat-select class="customer-component" formControlName="modelId"
+        <mat-select class="sneaker-component" formControlName="modelId"
         placeholder="Seçin">
           <mat-option value="0">Seçin</mat-option>
           <mat-option *ngFor="let ModelId of ModelArray" [value]="ModelId.id">
@@ -38,9 +38,9 @@
     </div>
 
     <div class="col-lg-3 col-12 d-flex flex-column" >
-      <span class="form-label">Tipler</span>
+      <span class="form-label">Tip</span>
       <mat-form-field appearance="fill">
-        <mat-select class="customer-component" formControlName="typeId"
+        <mat-select class="sneaker-component" formControlName="typeId"
         placeholder="Seçin">
           <mat-option value="0">Seçin</mat-option>
           <mat-option *ngFor="let TypeId of TypeArray" [value]="TypeId.id">
@@ -65,7 +65,7 @@
           [style.background-color]="color"
           class="sd"
         >
-          Brendlər
+          Brend
         </th>
         <td mat-cell *matCellDef="let element">{{ element.brandId }}</td>
       </ng-container>
@@ -78,7 +78,7 @@
           [style.background-color]="color"
           class="sd"
         >
-          Modellər
+          Model
         </th>
         <td mat-cell *matCellDef="let element">{{ element.modelId }}</td>
       </ng-container>

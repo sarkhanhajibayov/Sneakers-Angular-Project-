@@ -24,18 +24,18 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <p class="toolbar-text"><a>Hi, <strong>Jonh Doe</strong></a></p>
+          <p class="toolbar-text"><a><strong>Jonh Doe</strong></a></p>
         </mat-expansion-panel-header>
 
         <div class="profile">
-          <p> <a href="#">My Profile</a></p>
+          <p> <a href="#">Profilim</a></p>
           <span class="example-spacer"></span>
           <mat-icon>person</mat-icon>
       </div>
 
 
         <div class="settings">
-            <p> <a href="#">Settings</a></p>
+            <p> <a href="#">Tənzimləmələr</a></p>
             <span class="example-spacer"></span>
             <mat-icon>settings</mat-icon>
         </div>
@@ -72,7 +72,7 @@
 
       
       <div [routerLink]="['/sign-up']" class="log-out">
-        <p> <a>Log Out</a></p>
+        <p> <a>Hesabdan çıxış</a></p>
         <span class="example-spacer"></span>
         <mat-icon>exit_to_app</mat-icon>
     </div>
@@ -92,45 +92,31 @@
     
       <mat-drawer   #drawer mode="side" disableClose="true" opened="true">
         <mat-nav-list >
-          <!-- <a class="mt-2" mat-list-item [routerLink]="['/dashboard']">
-              <mat-icon>dashboard</mat-icon>
-              <span mat-line  class="pl-2" >Dashboard</span>
-          </a>
-          <a class="mt-2" mat-list-item [routerLink]="['/warehouse']">
-              <mat-icon>store</mat-icon>
-              <span mat-line  class="pl-2" >Warehouse</span>
-              
-          </a>  -->
 
           <a class="mt-2" mat-list-item [routerLink]="['/brands']">
             <mat-icon>loyalty</mat-icon>
-            <span mat-line  class="pl-2" >Brands</span>
+            <span mat-line  class="pl-2" >Brendlər</span>
             
           </a> 
 
           <a class="mt-2" mat-list-item [routerLink]="['/types']">
             <mat-icon>list_alt</mat-icon>
-            <span mat-line  class="pl-2" >Types</span>
+            <span mat-line  class="pl-2" >Tiplər</span>
           </a> 
 
           <a class="mt-2" mat-list-item [routerLink]="['/sizes']">
             <mat-icon>straighten</mat-icon>
-            <span mat-line  class="pl-2" >Sizes</span>
+            <span mat-line  class="pl-2" >Ölçülər</span>
           </a> 
 
           <a class="mt-2" mat-list-item [routerLink]="['/models']">
             <mat-icon>style</mat-icon>
-            <span mat-line  class="pl-2">Models</span>
+            <span mat-line  class="pl-2">Modellər</span>
           </a> 
-
-          <!-- <a class="mt-2" mat-list-item [routerLink]="['/employee']">
-            <mat-icon>supervised_user_circle</mat-icon>
-            <span mat-line  class="pl-2" >Employees</span>
-          </a>  -->
 
           <a class="mt-2 custom-icon" mat-list-item [routerLink]="['/sneakers']">
             <mat-icon>store</mat-icon>
-            <span mat-line  class="pl-2" >Sneakers</span>
+            <span mat-line  class="pl-2" >Ayaqqabılar</span>
           </a> 
       </mat-nav-list>
       </mat-drawer>
