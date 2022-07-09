@@ -1,14 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ApiService } from '../services/api.service';
+export interface DialogData {
+  label: string,
+  id: any
+}
 @Component({
   selector: 'app-delete-sneakers',
   templateUrl: './delete-sneakers.component.html',
   styleUrls: ['./delete-sneakers.component.css']
 })
 export class DeleteSneakersComponent implements OnInit {
+  data:any;
+  label: string;
+  id: any;
 
-  constructor() { }
-
+  constructor(@Inject(MAT_DIALOG_DATA)  data: DialogData, public apiService: ApiService) {
+    this.data = data;
+    this.label = data.label;
+    this.id = data.id;
+   }
+   deleteFunction(){
+    if(this.label == "sneaker"){
+      this.apiService.deleteSneaker(this.id).subscribe(data=>{
+      if (data.status.errCode != 0) {
+        this.apiService.messageDialog(data.status.message, false);
+      } else {
+        this.apiService.messageDialog(data.status.message, true);
+      }
+    });
+    }
+  }
   ngOnInit(): void {
   }
 

@@ -149,7 +149,6 @@ deleteSize(id: number): Observable<any> {
 deleteModel(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310";
   let url = this.myAppUrl + '/delete_model?id=' + id;
-
   return this.http.delete<any>(url);
 }
 
@@ -184,7 +183,7 @@ updateSneaker(model: any, id: number): Observable<any> {
 }
 deleteSneaker(id: number): Observable<any> {
   this.myAppUrl = "https://localhost:44310";
-  let url =this.myAppUrl +`/delete_sneaker?id=` + id;
+  let url = this.myAppUrl + '/delete_sneaker?id=' + id;
   return this.http.delete<any>(url);
 }
 
