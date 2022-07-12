@@ -47,7 +47,8 @@ export class SneakersComponent implements OnInit {
   filterForm: FormGroup = this.fb.group({
     brandId: 0,
     typeId:0,
-    modelId:0
+    modelId:0,
+    price:0
   });
 
   displayedColumns: string[] = ['brand', 'model', 'type', 'price', 'actions'];
@@ -89,13 +90,13 @@ export class SneakersComponent implements OnInit {
       this.get_Brand();  //?
       this.get_Model();  //?
       this.get_Type();  //?
-      this.get_sneakers({ "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "typeId": this.filterForm.controls['typeId'].value}, 5, 0, false);
+      this.get_sneakers({ "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "typeId": this.filterForm.controls['typeId'].value,"price": this.filterForm.controls['price'].value}, 5, 0, false);
   }
 
   filter_sneakers() {
     this.showSpinner = true;
-    this.get_sneakers({ "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "typeId": this.filterForm.controls['typeId'].value }, this.limit, this.skip, false);
-    console.log({  "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "type": this.filterForm.controls['typeId'].value  })
+    this.get_sneakers({ "brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "typeId": this.filterForm.controls['typeId'].value,"price": this.filterForm.controls['price'].value}, this.limit, this.skip, false);
+    console.log({"brandId": this.filterForm.controls['brandId'].value, "modelId": this.filterForm.controls['modelId'].value, "type": this.filterForm.controls['typeId'].value,"price": this.filterForm.controls['price'].value })
 
     // this.get_vacations({ "employee": this.filterForm.controls.employee.value, "startDate": this.range.controls.startDate.value, "endDate": this.range.controls.endDate.value, "vacationReasonId": this.filterForm.controls.vacationReasonId.value }, this.limit, this.skip, false);
   }

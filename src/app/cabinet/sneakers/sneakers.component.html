@@ -9,7 +9,7 @@
       <i class="fas fa-plus p-1"></i>Yeni ayaqqabı
     </button>
   </div>
-  <div
+  <!-- <div
     class="sneaker-filter-pane row mb-3 px-5 py-4 align-items-center"
     [formGroup]="filterForm"> 
     <div class="col-lg-3 col-12 d-flex flex-column" >
@@ -49,10 +49,23 @@
         </mat-select>
       </mat-form-field>
     </div>
+
+    <div class="col-lg-3 col-12 d-flex flex-column" >
+      <span class="form-label">Qiymət</span>
+      <mat-form-field appearance="fill">
+        <mat-select class="sneaker-component" formControlName="price"
+        placeholder="Seçin">
+          <mat-option value="0">Seçin</mat-option>
+          <mat-option *ngFor="let price of sneakersArray" [value]="price.price">
+            {{price.price}}
+        </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="col-lg-2 col-12 pt-2 d-flex justify-content-center">
       <button mat-button class="filter-btn" (click)="filter_sneakers()">Filterlə</button>
     </div>
-  </div>
+  </div> -->
 
 
   <div class="mat-elevation-z8" [ngClass]="{'d-none':showSpinner}"> 
