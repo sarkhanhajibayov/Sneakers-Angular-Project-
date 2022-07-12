@@ -128,11 +128,12 @@
           ></a>
           <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="openDialog('update', element.id)">
-              <i class="fas fa-pen"></i><span class="actions">Düzənlə</span>
+              <mat-icon>create</mat-icon>
+                <span class="actions">Düzənlə</span>
             </button>
             <button mat-menu-item (click)="delete_sneaker(element.id)">
-              <i class="fas fa-trash" style="color: #e91717"></i
-              ><span class="actions">Deaktiv et</span>
+              <mat-icon>delete</mat-icon>
+              <span class="actions">Deaktiv et</span>
             </button>
           </mat-menu>
         </td>

@@ -1,8 +1,11 @@
 <form [formGroup]="typeForm" style="width:300px;">
     <div class="new-position row">
         <div class="col-12 d-flex justify-content-between align-items-center mb-3">
-            <h1 class="tc-label m-0">
+            <h1 class="tc-label m-0" *ngIf="label=='new'">
                 Yeni Tip
+            </h1>
+            <h1 class="tc-label" *ngIf="label=='update'">
+                Tipi Düzənlə
             </h1>
             <button mat-icon-button mat-dialog-close >
       <mat-icon>close</mat-icon>
